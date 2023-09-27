@@ -37,9 +37,26 @@
 
   <body>
     <div class="menu-bar">
+      <a class="menu-item" href="/talks">onclick="loadTalks()">Talks</a>
       <a class="menu-item" href="/">Home</a>
-      <a class="menu-item" href="/youtube">Talks</a>
     </div>
+
+    <script>
+      // JavaScript function to load talks.html dynamically
+      function loadTalks() {
+          // Use AJAX or a similar method to load talks.html content into a div on the current page
+          // Here's a simple example using fetch:
+          fetch('/talks.html')
+              .then(response => response.text())
+              .then(data => {
+                  // Replace the content of a div with the loaded HTML
+                  document.getElementById('content-container').innerHTML = data;
+              })
+              .catch(error => console.error('Error loading talks.html:', error));
+      }
+  </script>
+
+
     <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
