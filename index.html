@@ -131,7 +131,7 @@
         </td>
         <td style="padding:20px;width:75%;vertical-align:middle">
           <a href="http://jonbarron.info/zipnerf">
-            <span class="papertitle">PeAction Segmentation Using 2D Skeleton Heatmaps</span>
+            <span class="papertitle">Action Segmentation Using 2D Skeleton Heatmaps</span>
           </a>
           <br>
           <a href="https://pk.linkedin.com/in/syedwaleedhyder">Syed Waleed Haider</a>,
@@ -139,7 +139,7 @@
           <a href="https://pk.linkedin.com/in/anas-zafar/">Anas Zafar</a>,
           <strong>Muhammad Naufil</strong>,
           <a href="https://www.linkedin.com/in/andreykonin">Andrey Konin</a>,
-          <a href="https://scholar.google.com/citations?user=xE_pSDAAAAAJ&hl=en">Zeeshan Zia</a>
+          <a href="https://scholar.google.com/citations?user=xE_pSDAAAAAJ&hl=en">Zeeshan Zia</a>,
           <a href="https://scholar.google.com.au/citations?user=8JbK0V8AAAAJ&hl=en">Quoc-Huy Tran</a>,
           <br>
           Submitted to <em>ICRA</em>, 2023 &nbsp
@@ -171,7 +171,58 @@
       </tr>
 
 
-            <tr>
+      <tr onmouseout="zipnerf_stop()" onmouseover="zipnerf_start()"  bgcolor="#ffffd0">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='zipnerf_image'><video  width=100% height=100% muted autoplay loop>
+            <source src="images/zipnerf.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video></div>
+            <img src='images/zipnerf.jpg' width="160">
+          </div>
+          <script type="text/javascript">
+            function zipnerf_start() {
+              document.getElementById('zipnerf_image').style.opacity = "1";
+            }
+
+            function zipnerf_stop() {
+              document.getElementById('zipnerf_image').style.opacity = "0";
+            }
+            zipnerf_stop()
+          </script>
+        </td>
+        <td style="padding:20px;width:75%;vertical-align:middle">
+          <a href="http://jonbarron.info/zipnerf">
+            <span class="papertitle">AI-mediated Job Status Tracking in AR as a No-Code service</span>
+          </a>
+          <br>
+          <a href="https://www.linkedin.com/in/andreykonin">Andrey Konin</a>,
+          <a href="https://pk.linkedin.com/in/shakeebsiddiqui">Shakeeb Siddiqui</a>,
+          <a href="https://pk.linkedin.com/in/hasan-gilani">Hasan Gilani</a>,
+          <a href="https://pk.linkedin.com/in/muhammad-mudassir-7024391ab">Muhammad Mudassir</a>,
+          <a href="https://pk.linkedin.com/in/hassan11196">Hassan Ahmed</a>,
+          <a href="https://www.linkedin.com/in/tabanshaukat/">Taban Shaukat</a>,
+          <strong>Muhammad Naufil</strong>,
+          <a href="https://scholar.google.com.pk/citations?user=NaF7zqYAAAAJ&hl=en">Awais Ahmed</a>,
+          <a href="https://scholar.google.com.au/citations?user=8JbK0V8AAAAJ&hl=en">Quoc-Huy Tran</a>,
+          <a href="https://scholar.google.com/citations?user=xE_pSDAAAAAJ&hl=en">Zeeshan Zia</a>
+          <br>
+          Published in <em>ISMAR</em>, 2022 &nbsp
+          <br>
+          <!-- <a href="http://jonbarron.info/zipnerf">project page</a> -->
+          <!-- / -->
+          <!-- <a href="https://www.youtube.com/watch?v=xrrhynRzC8k">video</a> -->
+          <!-- / -->
+          <a href="https://ieeexplore.ieee.org/document/9974204">IEEE</a>
+          <p></p>
+          <p>
+            Sophisticated AR experiences that can track the status of a manual assembly or maintenance job and provide corresponding guidance are built by teams of computer vision engineers over several months. These engineers model temporal causation on top of object detection and human skeletal tracking provided by traditional AR and AI SDKs. We demonstrate our Pathfinder system which automatically builds computational models of a complex manual task, such as a manufacturing assembly activity, given recorded demonstrations of the task - without requiring any custom coding. These computational models enable ordinary AR developers to build AI-mediated feedback in minutes instead of months. Keywords: Task Guidance, Computer Vision, Human Computer Interaction, Machine Learning, Industrial Applications     
+          </p>
+        </td>
+      </tr>
+
+
+            <!-- <tr>
               <td style="padding:20px;width:25%;vertical-align:middle">
                 <img src="images/clean_promo.jpg" alt="clean-usnob" width="160" height="160">
               </td>
@@ -253,8 +304,8 @@
                   Feel free to steal this website's <a href="https://github.com/jonbarron/jonbarron_website">source code</a>. <strong>Do not</strong> scrape the HTML from this page itself, as it includes analytics tags that you do not want on your own website &mdash; use the github code instead. Also, consider using <a href="https://leonidk.com/">Leonid Keselman</a>'s <a href="https://github.com/leonidk/new_website">Jekyll fork</a> of this page.
                 </p>
               </td>
-            </tr>
-          </tbody></table>
+            </tr> -->
+          <!-- </tbody></table> -->
         </td>
       </tr>
     </table>
