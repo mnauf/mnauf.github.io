@@ -10,8 +10,18 @@
 
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+    
+    <script src="jquery.js"></script>
+    <script src="mediaelement-and-player.min.js"></script>
+    <link rel="stylesheet" href="mediaelementplayer.css" />
+    
+    <script>
+      var player = new MediaElementPlayer('#player1');
+  </script>
+  
     <style>
       /* Define the styles for the menu bar */
+      
       .menu-bar {
             background-color: #FFFFFF;
             color: #fff;
@@ -31,6 +41,30 @@
         .menu-item:hover {
             background-color: #555;
         }
+
+      /* Define a container for the video grid */
+      .video-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+          gap: 20px; /* Adjust the gap between videos as needed */
+      }
+
+      /* Style each video container */
+      .video-container {
+          position: relative;
+          padding-bottom: 56.25%; /* 16:9 aspect ratio (responsive) */
+          overflow: hidden;
+      }
+
+      /* Style the embedded YouTube video */
+      .video-embed {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+      }
+
   </style>
 
   </head>
@@ -40,7 +74,163 @@
       <a class="menu-item" href="/talks.html" onclick="loadTalks()">Talks</a>
       <a class="menu-item" href="/">Home</a>
     </div>
-    <h2>I am a talks page</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/7pMasRv79tg?si=PSeqzrSJygpHwGPG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0"><tbody>
+      <tr>
+        <td>
+          <h2>Public Talks</h2>
+        </td>
+      </tr>
+    </tbody></table>
+    <br>
+    <!-- <p></p> -->
+
+    <table width="100%" align="center" border="0" cellpadding="0"><tbody>
+      <tr>
+        <td style="padding:0px;width:25%;vertical-align:middle">
+          <iframe width="360" height="180" src="https://www.youtube.com/embed/aoq2FDim8Ew?si=DLRdM-lZJDGBNaWz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <!-- <img src="images/assembly_copilot.jpg" alt="clean-usnob" width="160" height="160"> -->
+        </td>
+        <td width="75%" valign="middle">
+          <span class="papertitle">Build Actions with Dialogflow</span>
+          <br>
+          <em>Google Developer Students Club</em>
+          <br>
+          <p>Google Developer Students Club Online talk at Sir Syed University of Engineering & Technology</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding:0px;width:25%;vertical-align:middle">
+          <iframe width="360" height="180" src="https://www.youtube.com/embed/I2qgBZbiFDs?si=6dbPklgz9k2NGlXF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <!-- <img src="images/assembly_copilot.jpg" alt="clean-usnob" width="160" height="160"> -->
+        </td>
+        <td width="75%" valign="middle">
+          <span class="papertitle">Speech Recognition with Python</span>
+          <br>
+          <em>PyCon</em>
+          <br>
+          <p>PyCon, Habib University, Karachi.ai 8th Meetup</p>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding:0px;width:25%;vertical-align:middle">
+          <img src="images/self_learning.jpg" alt="clean-usnob" width="360">
+        </td>
+        <td width="75%" valign="middle">
+          <span class="papertitle">Self Learning</span>
+          <br>
+          <em>NEDUET Student Society</em>
+          <br>
+          <p>Advised young students about free resources and tech scholarships to get their hands on early in their careers</p>
+        </td>
+      </tr>
+    </tbody></table>
+
+    <br>
+    <br>
+    <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0"><tbody>
+      <tr>
+        <td>
+          <h2>Youtube Channel Videos</h2>
+        </td>
+      </tr>
+    </tbody></table>
+    <br>
+        <!-- Create a container for the video grid -->
+        <div class="video-grid" cellpadding="20">
+          <!-- <div class="video-row"> -->
+          <!-- Video 1 -->
+          <div class="video-container">
+              <iframe class="video-embed" src="https://www.youtube.com/embed/7pMasRv79tg?si=PSeqzrSJygpHwGPG" frameborder="0" allowfullscreen></iframe>
+          </div>
+  
+          <!-- Video 2 -->
+          <div class="video-container">
+              <iframe class="video-embed" src="https://www.youtube.com/embed/v0RBI1fVRrM?si=atxgcw0a1YbAYD8t" frameborder="0" allowfullscreen></iframe>
+          </div>
+  
+          <!-- Video 3 -->
+          <div class="video-container">
+              <iframe class="video-embed" src="https://www.youtube.com/embed/GyDG7uLdl04?si=jNwhttrp1qevGK_H" frameborder="0" allowfullscreen></iframe>
+          </div>
+         
+            <!-- Video 1 -->
+            <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/fuFvNptn9bI?si=wn5qcJgigF3qLhGs" frameborder="0" allowfullscreen></iframe>
+            </div>
+          <!-- </div> -->
+          <!-- <div class="video-row"> -->
+            <!-- Video 2 -->
+            <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/01-_p3vzD0A?si=_fLIddifmwQxBix_" frameborder="0" allowfullscreen></iframe>
+            </div>
+    
+            <!-- Video 3 -->
+            <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/T6RBt5lw_ps?si=WV2F3Ijz4DPUd4v8" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+
+
+                      <!-- Video 1 -->
+          <div class="video-container">
+            <iframe class="video-embed" src="https://www.youtube.com/embed/1Lxia2Cu_Gg?si=jBd5VxB9111aPQ-Q" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-container">
+            <iframe class="video-embed" src="https://www.youtube.com/embed/de3dHMYd8FY?si=z90cc2lHmotTMWEE" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <!-- </div> -->
+
+        <!-- <div class="video-row"> -->
+        <!-- Video 3 -->
+        <div class="video-container">
+            <iframe class="video-embed" src="https://www.youtube.com/embed/GyDG7uLdl04?si=jNwhttrp1qevGK_H" frameborder="0" allowfullscreen></iframe>
+        </div>
+          <!-- Video 1 -->
+          <div class="video-container">
+              <iframe class="video-embed" src="https://www.youtube.com/embed/ewxCQfNwXAY?si=nfp2pHrmrUk7VqC4" frameborder="0" allowfullscreen></iframe>
+          </div>
+  
+          <!-- Video 2 -->
+          <div class="video-container">
+              <iframe class="video-embed" src="https://www.youtube.com/embed/S7jHdoSu8TA?si=x-oaScCMGanl3tq1" frameborder="0" allowfullscreen></iframe>
+          </div>
+  
+          <!-- Video 3 -->
+          <div class="video-container">
+              <iframe class="video-embed" src="https://www.youtube.com/embed/MUrsdzfRgpg?si=PqX_HQru6O4-xQt4" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <!-- </div> -->
+
+
+
+
+
+          <!-- <div class="video-row"> -->
+            <!-- Video 1 -->
+            <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/ewxCQfNwXAY?si=nfp2pHrmrUk7VqC4" frameborder="0" allowfullscreen></iframe>
+            </div>
+    
+            <!-- Video 2 -->
+            <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/AlYdudYx6rw?si=oEngIl-h7pGAYSD9" frameborder="0" allowfullscreen></iframe>
+            </div>
+    
+            <!-- Video 3 -->
+            <!-- <div class="video-container">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/MUrsdzfRgpg?si=PqX_HQru6O4-xQt4" frameborder="0" allowfullscreen></iframe>
+            </div> -->
+
+  
+          <!-- Add more video containers as needed -->
+      </div>
+      <!-- </div> -->
+
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/7pMasRv79tg?si=PSeqzrSJygpHwGPG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
   </body>
 </html>
