@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://www.kimi.com/preview/19c05e88-d002-8267-8000-05ff05252a1d -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimi 2.5 vs ChatGPT: The Complete 2026 Guide</title>
+    <script src="./kimi-guide_files/saved_resource"></script>
+    <link href="./kimi-guide_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./kimi-guide_files/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #64748b;
+            --accent: #f59e0b;
+            --neutral: #f8fafc;
+            --base-100: #ffffff;
+        }
+        
+        .font-tiempos { font-family: 'Tiempos Headline', serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .toc-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+            border-right: 1px solid #e2e8f0;
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 2rem 1.5rem;
+        }
+        
+        .content-area {
+            margin-left: 280px;
+            min-height: 100vh;
+        }
+        
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .bento-main {
+            grid-row: 1 / 3;
+        }
+        
+        .comparison-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .comparison-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .insight-highlight {
+            background: linear-gradient(90deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        .citation-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #2563eb;
+        }
+        
+        .citation-link:hover {
+            background: #eff6ff;
+            border-bottom-style: solid;
+        }
+        
+        @media (max-width: 1024px) {
+            .toc-fixed {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .toc-fixed.open {
+                transform: translateX(0);
+            }
+            
+            .content-area {
+                margin-left: 0;
+            }
+            
+            .bento-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+            }
+            
+            .bento-main {
+                grid-row: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .comparison-card, .bento-main, .bento-side, .insight-highlight {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+        }
+
+        @media (max-width: 390px) {
+            body {
+                overflow-x: hidden;
+            }
+        }
+    </style>
+  <!--<base target="_blank">--><base href="." target="_blank">
+<script src="./kimi-guide_files/sdk-seed.js" defer="" data-brand="dr"></script>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.mx-auto{margin-left:auto;margin-right:auto}.my-8{margin-top:2rem;margin-bottom:2rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-2{margin-right:0.5rem}.mt-8{margin-top:2rem}.mb-1{margin-bottom:0.25rem}.mb-12{margin-bottom:3rem}.mt-1{margin-top:0.25rem}.mt-12{margin-top:3rem}.block{display:block}.flex{display:flex}.grid{display:grid}.w-full{width:100%}.max-w-3xl{max-width:48rem}.max-w-4xl{max-width:56rem}.max-w-none{max-width:none}.max-w-6xl{max-width:72rem}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-between{justify-content:space-between}.gap-8{gap:2rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-x-6 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1.5rem * var(--tw-space-x-reverse));margin-left:calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-slate-200 > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(226 232 240 / var(--tw-divide-opacity, 1))}.overflow-x-auto{overflow-x:auto}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.rounded-lg{border-radius:0.5rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-b{border-bottom-width:1px}.border-l-4{border-left-width:4px}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.border-white\/20{border-color:rgb(255 255 255 / 0.2)}.border-blue-500{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.border-green-500{--tw-border-opacity:1;border-color:rgb(34 197 94 / var(--tw-border-opacity, 1))}.border-purple-500{--tw-border-opacity:1;border-color:rgb(168 85 247 / var(--tw-border-opacity, 1))}.border-red-500{--tw-border-opacity:1;border-color:rgb(239 68 68 / var(--tw-border-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.p-6{padding:1.5rem}.p-4{padding:1rem}.p-8{padding:2rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-8{padding-left:2rem;padding-right:2rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-12{padding-top:3rem;padding-bottom:3rem}.pt-6{padding-top:1.5rem}.pb-2{padding-bottom:0.5rem}.pl-3{padding-left:0.75rem}.pl-4{padding-left:1rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-\[8px\]{font-size:8px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-light{font-weight:300}.font-medium{font-weight:500}.font-semibold{font-weight:600}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-emerald-500{--tw-text-opacity:1;color:rgb(16 185 129 / var(--tw-text-opacity, 1))}.text-green-500{--tw-text-opacity:1;color:rgb(34 197 94 / var(--tw-text-opacity, 1))}.text-indigo-500{--tw-text-opacity:1;color:rgb(99 102 241 / var(--tw-text-opacity, 1))}.text-purple-500{--tw-text-opacity:1;color:rgb(168 85 247 / var(--tw-text-opacity, 1))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-blue-300{--tw-text-opacity:1;color:rgb(147 197 253 / var(--tw-text-opacity, 1))}.opacity-80{opacity:0.8}.opacity-90{opacity:0.9}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-slate-200:hover{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:text-2xl{font-size:1.5rem;line-height:2rem}.lg\:text-4xl{font-size:2.25rem;line-height:2.5rem}.lg\:text-6xl{font-size:3.75rem;line-height:1}}</style><script src="./kimi-guide_files/preview-widgets.min.js" async=""></script>
+    <style>
+      .kimi-brand-container {
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        z-index: 99999999;
+        transition: opacity 0.3s ease;
+      }
+
+      .kimi-brand-close-icon {
+        cursor: pointer;
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+        background: rgba(69, 69, 69, 0.70);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        border: 0.5px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .kimi-brand-container:hover .kimi-brand-close-icon {
+        display: flex;
+      }
+
+      .kimi-brand-link {
+        background: #000;
+        color: white;
+        padding: 4px 6px 4px 4px;
+        border-radius: 16px;
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        line-height: 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        border: 0.5px solid rgba(255, 255, 255, 0.15);
+        text-decoration: none;
+      }
+
+      .kimi-brand-container:hover .kimi-brand-icon {
+        width: 16px;
+      }
+
+      .kimi-brand-icon {
+        width: 0;
+        overflow: hidden;
+        transition: width 0.3s ease;
+        pointer-events: none;
+      }
+
+      .kimi-brand-avatar {
+        width: 18px;
+        height: 18px;
+        border: 0.5px solid rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-50 font-inter" data-new-gr-c-s-check-loaded="14.1270.0" data-gr-ext-installed="">
+    <!-- Table of Contents - Fixed Left Sidebar -->
+    <nav class="toc-fixed">
+      <div class="mb-8">
+        <h2 class="font-tiempos text-xl font-bold text-slate-800 mb-2">Kimi 2.5 vs ChatGPT</h2>
+        <p class="text-sm text-slate-600">Complete Comparative Analysis 2026</p>
+      </div>
+
+      <div class="space-y-2">
+        <a href="https://www.kimi.com/preview/19c05e88-d002-8267-8000-05ff05252a1d#introduction" class="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-200 rounded-md transition-colors">
+          <i class="fas fa-play-circle mr-2 text-blue-500"></i>Introduction
+        </a>
+        <a href="https://www.kimi.com/preview/19c05e88-d002-8267-8000-05ff05252a1d#technical" class="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-200 rounded-md transition-colors">
+          <i class="fas fa-cogs mr-2 text-purple-500"></i>Technical Capabilities
+        </a>
+        <a href="https://www.kimi.com/preview/19c05e88-d002-8267-8000-05ff05252a1d#experience" class="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-200 rounded-md transition-colors">
+          <i class="fas fa-user-interface mr-2 text-green-500"></i>User Experience
+        </a>
+        <a href="https://www.kimi.com/preview/19c05e88-d002-8267-8000-05ff05252a1d#usecases" class="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-200 rounded-md transition-colors">
+          <i class="fas fa-lightbulb mr-2 text-amber-500"></i>Use Cases &amp; Applications
+        </a>
+        <a href="https://www.kimi.com/preview/19c05e88-d002-8267-8000-05ff05252a1d#accessibility" class="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-200 rounded-md transition-colors">
+          <i class="fas fa-dollar-sign mr-2 text-emerald-500"></i>Accessibility &amp; Cost
+        </a>
+        <a href="https://www.kimi.com/preview/19c05e88-d002-8267-8000-05ff05252a1d#comparison" class="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-200 rounded-md transition-colors">
+          <i class="fas fa-chart-bar mr-2 text-red-500"></i>Side-by-Side Comparison
+        </a>
+        <a href="https://www.kimi.com/preview/19c05e88-d002-8267-8000-05ff05252a1d#conclusion" class="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-200 rounded-md transition-colors">
+          <i class="fas fa-flag-checkered mr-2 text-indigo-500"></i>Conclusion
+        </a>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-slate-300">
+        <h3 class="font-semibold text-sm text-slate-700 mb-3">Key Insights</h3>
+        <div class="space-y-2 text-xs text-slate-600">
+          <div class="flex items-center">
+            <i class="fas fa-circle text-blue-500 mr-2 text-[8px]"></i>
+            <span>200× cost advantage for Kimi</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-circle text-purple-500 mr-2 text-[8px]"></i>
+            <span>262K token context window</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-circle text-green-500 mr-2 text-[8px]"></i>
+            <span>Native Chinese vs English fluency</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="content-area">
+      <!-- Hero Section with Bento Grid -->
+      <section class="hero-gradient text-white py-16">
+        <div class="container mx-auto px-8">
+          <div class="bento-grid">
+            <!-- Main Hero Content -->
+            <div class="bento-main">
+              <div class="space-y-6">
+                <h1 class="font-tiempos text-5xl lg:text-6xl font-bold leading-tight">
+                  <em class="block text-3xl lg:text-4xl font-light mb-4 opacity-90">The Complete Guide to</em>
+                  Kimi 2.5 vs ChatGPT
+                </h1>
+                <p class="text-xl lg:text-2xl opacity-90 max-w-3xl leading-relaxed">
+                  A comprehensive analysis of AI assistants in 2026: from technical capabilities and user experience to practical applications and economic considerations.
+                </p>
+                <div class="flex items-center space-x-6 text-sm opacity-80">
+                  <span><i class="fas fa-calendar mr-2"></i>Updated January 2026</span>
+                  <span><i class="fas fa-clock mr-2"></i>25 min read</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Side Cards -->
+            <div class="space-y-6">
+              <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                <h3 class="font-semibold text-lg mb-3">Key Finding</h3>
+                <p class="text-sm">Kimi 2.5 offers <strong class="text-amber-300">200× cost advantage</strong> while excelling in transparent agentic workflows and Chinese language processing.</p>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                <h3 class="font-semibold text-lg mb-3">Decision Framework</h3>
+                <p class="text-sm">Choose Kimi for technical depth and economics; choose ChatGPT for conversational ease and premium integrations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Introduction Section -->
+      <section id="introduction" class="py-16 bg-white">
+        <div class="container mx-auto px-8">
+          <div class="max-w-4xl mx-auto">
+            <h2 class="font-tiempos text-4xl font-bold text-slate-800 mb-8">Introduction: The Browser Test That Reveals Everything</h2>
+
+            <div class="prose prose-lg max-w-none">
+              <div class="insight-highlight">
+                <h3 class="font-semibold text-lg mb-2"><i class="fas fa-flask mr-2"></i>The London-Vienna Weather Experiment</h3>
+                <p>When evaluating modern AI assistants, theoretical benchmarks often fail to capture the practical experience. A simple yet revealing experiment—requesting both <strong>Kimi 2.5</strong> and <strong>ChatGPT</strong> to scrape a webpage comparing London and Vienna weather data—illuminates the fundamental philosophical divide between these two frontier models.</p>
+              </div>
+
+              <h3 class="font-tiempos text-2xl font-semibold text-slate-700 mt-8 mb-4">Setting up the Agentic Capability Test</h3>
+              <p class="text-slate-600 leading-relaxed mb-6">The experimental design was straightforward yet demanding of genuine agentic capabilities. Both systems were prompted to access a live webpage containing comparative meteorological and temporal data for two European capitals, extract the relevant information, and present a coherent summary.</p>
+
+              <div class="grid md:grid-cols-2 gap-8 my-8">
+                <div class="comparison-card p-6">
+                  <h4 class="font-semibold text-lg text-blue-600 mb-3"><i class="fas fa-search mr-2"></i>Kimi's Step-by-Step Visual Approach</h4>
+                  <p class="text-slate-600 text-sm mb-4">Kimi 2.5 approached the task with radical transparency, generating a detailed visual narrative of its entire operational workflow.</p>
+                  <ul class="text-sm text-slate-600 space-y-1">
+                    <li>• Virtual browser interface screenshots</li>
+                    <li>• Precise scrolling operation documentation</li>
+                    <li>• Methodical interpretation of visual layout</li>
+                  </ul>
+                </div>
+
+                <div class="comparison-card p-6">
+                  <h4 class="font-semibold text-lg text-purple-600 mb-3"><i class="fas fa-rocket mr-2"></i>ChatGPT's Speed-First Approach</h4>
+                  <p class="text-slate-600 text-sm mb-4">ChatGPT processed the request with characteristic efficiency, delivering results almost instantaneously without intermediate steps.</p>
+                  <ul class="text-sm text-slate-600 space-y-1">
+                    <li>• Behind-the-scenes processing</li>
+                    <li>• Polished final results only</li>
+                    <li>• Conversational flow preservation</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h3 class="font-tiempos text-2xl font-semibold text-slate-700 mt-8 mb-4">The Rise of "Showing Your Work" in AI Agents</h3>
+              <p class="text-slate-600 leading-relaxed">This divergence encapsulates the central tension in contemporary AI design: the inevitable trade-off between transparency and efficiency. Kimi's approach anticipates a future where AI agents operate as digital colleagues rather than black-box utilities, requiring human oversight and intervention for complex workflows.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Capabilities Section -->
+      <section id="technical" class="py-16 bg-slate-50">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="font-tiempos text-4xl font-bold text-slate-800 mb-12">Technical Capabilities and Performance Benchmarks</h2>
+
+            <!-- Architecture Comparison -->
+            <div class="mb-12">
+              <h3 class="font-tiempos text-2xl font-semibold text-slate-700 mb-6">Under the Hood: Model Specifications</h3>
+
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div class="comparison-card p-6">
+                  <h4 class="font-semibold text-lg text-blue-600 mb-4">Kimi 2.5 Architecture</h4>
+                  <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                      <span class="text-slate-600">Total Parameters</span>
+                      <span class="font-semibold">1.04T (MoE)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-slate-600">Active Parameters</span>
+                      <span class="font-semibold">32B per token</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-slate-600">Expert Networks</span>
+                      <span class="font-semibold">384 total</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-slate-600">Vision Encoder</span>
+                      <span class="font-semibold">MoonViT (400M)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-slate-600">License</span>
+                      <span class="font-semibold text-green-600">Modified MIT</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="comparison-card p-6">
+                  <h4 class="font-semibold text-lg text-purple-600 mb-4">ChatGPT (GPT-5.2) Architecture</h4>
+                  <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                      <span class="text-slate-600">Total Parameters</span>
+                      <span class="font-semibold">~1.8T (Dense)</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-slate-600">Active Parameters</span>
+                      <span class="font-semibold">Higher proportion</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-slate-600">Expert Networks</span>
+                      <span class="font-semibold">Unified routing</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-slate-600">Vision Encoder</span>
+                      <span class="font-semibold">Integrated</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-slate-600">License</span>
+                      <span class="font-semibold text-red-600">Proprietary</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Context Window Comparison -->
+            <div class="insight-highlight mb-8">
+              <h4 class="font-semibold text-lg mb-2"><i class="fas fa-window-maximize mr-2"></i>Context Window Advantage</h4>
+              <p>Kimi 2.5 offers <strong>262,144 tokens</strong> of context—effectively doubling ChatGPT's standard limit and enabling processing of entire codebases or 400-page documents in a single pass.</p>
+            </div>
+
+            <!-- Benchmark Performance -->
+            <div class="mb-8">
+              <h4 class="font-tiempos text-xl font-semibold text-slate-700 mb-4">Performance Benchmarks</h4>
+              <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="comparison-card p-4 text-center">
+                  <div class="text-2xl font-bold text-blue-600 mb-1">50.2%</div>
+                  <div class="text-sm text-slate-600">Humanity's Last Exam</div>
+                  <div class="text-xs text-slate-500">Kimi 2.5</div>
+                </div>
+                <div class="comparison-card p-4 text-center">
+                  <div class="text-2xl font-bold text-purple-600 mb-1">45.5%</div>
+                  <div class="text-sm text-slate-600">Humanity's Last Exam</div>
+                  <div class="text-xs text-slate-500">ChatGPT</div>
+                </div>
+                <div class="comparison-card p-4 text-center">
+                  <div class="text-2xl font-bold text-blue-600 mb-1">86.6%</div>
+                  <div class="text-sm text-slate-600">Video-MMMU</div>
+                  <div class="text-xs text-slate-500">Kimi 2.5</div>
+                </div>
+                <div class="comparison-card p-4 text-center">
+                  <div class="text-2xl font-bold text-purple-600 mb-1">85.9%</div>
+                  <div class="text-sm text-slate-600">Video-MMMU</div>
+                  <div class="text-xs text-slate-500">ChatGPT</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- User Experience Section -->
+      <section id="experience" class="py-16 bg-white">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="font-tiempos text-4xl font-bold text-slate-800 mb-12">User Experience and Interface Differences</h2>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-12">
+              <div class="comparison-card p-6">
+                <h3 class="font-semibold text-lg text-blue-600 mb-4"><i class="fas fa-eye mr-2"></i>Interface Philosophy</h3>
+                <div class="space-y-3 text-sm text-slate-600">
+                  <div class="border-l-4 border-blue-500 pl-3">
+                    <strong>Kimi:</strong> Radical transparency with visual workflow demonstration
+                  </div>
+                  <div class="border-l-4 border-purple-500 pl-3">
+                    <strong>ChatGPT:</strong> Streamlined output-focused simplicity
+                  </div>
+                </div>
+              </div>
+
+              <div class="comparison-card p-6">
+                <h3 class="font-semibold text-lg text-green-600 mb-4"><i class="fas fa-mobile-alt mr-2"></i>Platform Accessibility</h3>
+                <div class="space-y-3 text-sm text-slate-600">
+                  <div class="border-l-4 border-blue-500 pl-3">
+                    <strong>Kimi:</strong> API-first architecture with developer focus
+                  </div>
+                  <div class="border-l-4 border-purple-500 pl-3">
+                    <strong>ChatGPT:</strong> Web-ready out-of-the-box experience
+                  </div>
+                </div>
+              </div>
+
+              <div class="comparison-card p-6">
+                <h3 class="font-semibold text-lg text-amber-600 mb-4"><i class="fas fa-microphone mr-2"></i>Specialized Features</h3>
+                <div class="space-y-3 text-sm text-slate-600">
+                  <div class="border-l-4 border-blue-500 pl-3">
+                    <strong>Kimi:</strong> Agent Swarm with 100 sub-agents
+                  </div>
+                  <div class="border-l-4 border-purple-500 pl-3">
+                    <strong>ChatGPT:</strong> Advanced Voice Mode and Health features
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Agent Swarm Visualization -->
+            <div class="mb-12">
+              <h3 class="font-tiempos text-2xl font-semibold text-slate-700 mb-6">Kimi's Agent Swarm: Managing 100 Sub-Agents</h3>
+              <div class="comparison-card p-8">
+                <div class="text-center mb-6">
+                  <img src="./kimi-guide_files/23b112b00bb28ad68f6108f8ed7fc6d4a2992321.png" alt="Abstract visualization of AI agents working in parallel" class="mx-auto rounded-lg shadow-lg" size="medium" aspect="wide" query="AI swarm agents collaboration" referrerpolicy="no-referrer" data-modified="1" data-score="0.00">
+                </div>
+                <p class="text-slate-600 leading-relaxed">Kimi 2.5's signature innovation enables the self-directed orchestration of up to 100 specialized sub-agents executing 1,500 simultaneous tool calls. This Parallel-Agent Reinforcement Learning architecture autonomously decomposes complex projects into parallel sub-tasks, reducing execution time by up to 4.5×.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Use Cases Section -->
+      <section id="usecases" class="py-16 bg-slate-50">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="font-tiempos text-4xl font-bold text-slate-800 mb-12">Use Cases and Practical Applications</h2>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+              <div class="comparison-card p-8">
+                <h3 class="font-tiempos text-xl font-semibold text-blue-600 mb-4">Content Creation &amp; Writing</h3>
+                <div class="space-y-4">
+                  <div class="border-l-4 border-blue-500 pl-4">
+                    <h4 class="font-semibold text-slate-800">English Content</h4>
+                    <p class="text-sm text-slate-600">ChatGPT leads with nuanced fluency for creative writing and marketing copy</p>
+                  </div>
+                  <div class="border-l-4 border-red-500 pl-4">
+                    <h4 class="font-semibold text-slate-800">Chinese Content</h4>
+                    <p class="text-sm text-slate-600">Kimi dominates with native-level cultural awareness and market adaptation</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="comparison-card p-8">
+                <h3 class="font-tiempos text-xl font-semibold text-purple-600 mb-4">Software Development</h3>
+                <div class="space-y-4">
+                  <div class="border-l-4 border-purple-500 pl-4">
+                    <h4 class="font-semibold text-slate-800">Coding Accuracy</h4>
+                    <p class="text-sm text-slate-600">ChatGPT: 78.5% vs Kimi: 76.8% on SWE-Bench Verified</p>
+                  </div>
+                  <div class="border-l-4 border-green-500 pl-4">
+                    <h4 class="font-semibold text-slate-800">Vision-Based Coding</h4>
+                    <p class="text-sm text-slate-600">Kimi transforms UI mockups to functional code with visual feedback</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Business Applications -->
+            <div class="mb-8">
+              <h3 class="font-tiempos text-2xl font-semibold text-slate-700 mb-6">Business &amp; Enterprise Applications</h3>
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="comparison-card p-6">
+                  <h4 class="font-semibold text-slate-800 mb-3"><i class="fas fa-headset mr-2 text-blue-500"></i>Customer Support</h4>
+                  <div class="text-sm text-slate-600 space-y-2">
+                    <p><strong>Kimi:</strong> 97% cost savings for high-volume automation</p>
+                    <p><strong>ChatGPT:</strong> Better emotional intelligence for sensitive interactions</p>
+                  </div>
+                </div>
+
+                <div class="comparison-card p-6">
+                  <h4 class="font-semibold text-slate-800 mb-3"><i class="fas fa-chart-line mr-2 text-green-500"></i>Data Analysis</h4>
+                  <div class="text-sm text-slate-600 space-y-2">
+                    <p><strong>Kimi:</strong> Extended context enables large-scale research synthesis</p>
+                    <p><strong>ChatGPT:</strong> Rapid insights for business intelligence</p>
+                  </div>
+                </div>
+
+                <div class="comparison-card p-6">
+                  <h4 class="font-semibold text-slate-800 mb-3"><i class="fas fa-heart mr-2 text-red-500"></i>Healthcare</h4>
+                  <div class="text-sm text-slate-600 space-y-2">
+                    <p><strong>ChatGPT Pro:</strong> HIPAA-compliant Health feature with EMR integration</p>
+                    <p><strong>Kimi:</strong> General-purpose capabilities without specialized compliance</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accessibility &amp; Cost Section -->
+      <section id="accessibility" class="py-16 bg-white">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="font-tiempos text-4xl font-bold text-slate-800 mb-12">Accessibility and Cost-Effectiveness</h2>
+
+            <!-- Cost Comparison -->
+            <div class="mb-12">
+              <h3 class="font-tiempos text-2xl font-semibold text-slate-700 mb-6">The 200× Cost Advantage</h3>
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div class="comparison-card p-8">
+                  <h4 class="font-semibold text-lg text-slate-800 mb-4">Token Economics</h4>
+                  <div class="space-y-4">
+                    <div class="flex justify-between items-center border-b pb-2">
+                      <span class="text-slate-600">Input (per million tokens)</span>
+                      <div class="text-right">
+                        <div class="font-semibold text-blue-600">$0.60 Kimi</div>
+                        <div class="font-semibold text-purple-600">$30 ChatGPT</div>
+                      </div>
+                    </div>
+                    <div class="flex justify-between items-center border-b pb-2">
+                      <span class="text-slate-600">Output (per million tokens)</span>
+                      <div class="text-right">
+                        <div class="font-semibold text-blue-600">$2.50 Kimi</div>
+                        <div class="font-semibold text-purple-600">$60 ChatGPT</div>
+                      </div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                      <span class="text-slate-600 font-semibold">Blended Cost (3:1 ratio)</span>
+                      <div class="text-right">
+                        <div class="font-semibold text-blue-600">~$1.07 Kimi</div>
+                        <div class="font-semibold text-purple-600">~$37.50 ChatGPT</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="comparison-card p-8">
+                  <h4 class="font-semibold text-lg text-slate-800 mb-4">Real-World Scenarios</h4>
+                  <div class="space-y-4">
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                      <h5 class="font-medium text-slate-800 mb-2">Customer Support (10M tokens/month)</h5>
+                      <div class="flex justify-between text-sm">
+                        <span>Kimi: ~$31/month</span>
+                        <span class="text-red-600">Annual savings: $10,428</span>
+                      </div>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg">
+                      <h5 class="font-medium text-slate-800 mb-2">High-Volume SaaS (100M tokens/month)</h5>
+                      <div class="flex justify-between text-sm">
+                        <span>Kimi: ~$310/month</span>
+                        <span class="text-red-600">Annual savings: $104,280</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Open Source vs Proprietary -->
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+              <div class="comparison-card p-6">
+                <h4 class="font-semibold text-lg text-green-600 mb-4"><i class="fas fa-code mr-2"></i>Kimi's Open Approach</h4>
+                <div class="space-y-3 text-sm text-slate-600">
+                  <div class="flex items-center">
+                    <i class="fas fa-check text-green-500 mr-2"></i>
+                    <span>Modified MIT License for commercial use</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-check text-green-500 mr-2"></i>
+                    <span>Self-hosting on private infrastructure</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-check text-green-500 mr-2"></i>
+                    <span>Fine-tuning and customization options</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-check text-green-500 mr-2"></i>
+                    <span>Data sovereignty compliance</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="comparison-card p-6">
+                <h4 class="font-semibold text-lg text-blue-600 mb-4"><i class="fas fa-shield-alt mr-2"></i>ChatGPT's Enterprise Guarantees</h4>
+                <div class="space-y-3 text-sm text-slate-600">
+                  <div class="flex items-center">
+                    <i class="fas fa-check text-blue-500 mr-2"></i>
+                    <span>Managed infrastructure with SLAs</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-check text-blue-500 mr-2"></i>
+                    <span>SOC 2 compliance and security</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-check text-blue-500 mr-2"></i>
+                    <span>Dedicated support channels</span>
+                  </div>
+                  <div class="flex items-center">
+                    <i class="fas fa-check text-blue-500 mr-2"></i>
+                    <span>Consistent model behavior</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Side-by-Side Comparison Table -->
+      <section id="comparison" class="py-16 bg-slate-50">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="font-tiempos text-4xl font-bold text-slate-800 mb-12">Side-by-Side Comparison Summary</h2>
+
+            <div class="overflow-x-auto comparison-card">
+              <table class="w-full text-sm">
+                <thead class="bg-slate-100">
+                  <tr>
+                    <th class="text-left p-4 font-semibold text-slate-800">Specification</th>
+                    <th class="text-center p-4 font-semibold text-blue-600">Kimi 2.5</th>
+                    <th class="text-center p-4 font-semibold text-purple-600">ChatGPT (GPT-5.2)</th>
+                    <th class="text-center p-4 font-semibold text-slate-800">Advantage</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+                  <tr>
+                    <td class="p-4 font-medium">Architecture</td>
+                    <td class="p-4 text-center">MoE, 1.04T params (32B active)</td>
+                    <td class="p-4 text-center">Dense, ~1.8T params</td>
+                    <td class="p-4 text-center text-green-600">Kimi (efficiency)</td>
+                  </tr>
+                  <tr class="bg-slate-50">
+                    <td class="p-4 font-medium">Context Window</td>
+                    <td class="p-4 text-center font-bold text-blue-600">262,144 tokens</td>
+                    <td class="p-4 text-center">128,000 tokens</td>
+                    <td class="p-4 text-center text-green-600 font-bold">Kimi (2×+)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 font-medium">Input Cost</td>
+                    <td class="p-4 text-center font-bold text-green-600">$0.60/million</td>
+                    <td class="p-4 text-center">$30/million</td>
+                    <td class="p-4 text-center text-green-600 font-bold">Kimi (50×)</td>
+                  </tr>
+                  <tr class="bg-slate-50">
+                    <td class="p-4 font-medium">SWE-Bench Verified</td>
+                    <td class="p-4 text-center">76.8%</td>
+                    <td class="p-4 text-center font-bold text-purple-600">78.5%</td>
+                    <td class="p-4 text-center text-purple-600">ChatGPT (slight)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 font-medium">Humanity's Last Exam</td>
+                    <td class="p-4 text-center font-bold text-blue-600">50.2%</td>
+                    <td class="p-4 text-center">45.5%</td>
+                    <td class="p-4 text-center text-green-600 font-bold">Kimi</td>
+                  </tr>
+                  <tr class="bg-slate-50">
+                    <td class="p-4 font-medium">Video-MMMU</td>
+                    <td class="p-4 text-center font-bold text-blue-600">86.6%</td>
+                    <td class="p-4 text-center">85.9%</td>
+                    <td class="p-4 text-center text-green-600 font-bold">Kimi</td>
+                  </tr>
+                  <tr>
+                    <td class="p-4 font-medium">Agent Capability</td>
+                    <td class="p-4 text-center font-bold text-blue-600">100 sub-agents (Swarm)</td>
+                    <td class="p-4 text-center">Single agent + tools</td>
+                    <td class="p-4 text-center text-green-600 font-bold">Kimi</td>
+                  </tr>
+                  <tr class="bg-slate-50">
+                    <td class="p-4 font-medium">License</td>
+                    <td class="p-4 text-center font-bold text-green-600">Modified MIT (Open)</td>
+                    <td class="p-4 text-center">Proprietary</td>
+                    <td class="p-4 text-center text-green-600 font-bold">Kimi</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Decision Matrix -->
+            <div class="grid lg:grid-cols-2 gap-8 mt-12">
+              <div class="comparison-card p-8">
+                <h3 class="font-tiempos text-xl font-semibold text-blue-600 mb-6">Choose Kimi 2.5 When:</h3>
+                <ul class="space-y-3 text-sm text-slate-600">
+                  <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i>Operating in Chinese markets or requiring native Mandarin fluency</li>
+                  <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i>Budget constraints are critical—200× cost advantage enables scaling</li>
+                  <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i>Processing video content or requiring native multimodal analysis</li>
+                  <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i>Building complex agentic workflows with parallel processing</li>
+                  <li class="flex items-start"><i class="fas fa-check text-green-500 mr-2 mt-1"></i>Open-source flexibility and data sovereignty are required</li>
+                </ul>
+              </div>
+
+              <div class="comparison-card p-8">
+                <h3 class="font-tiempos text-xl font-semibold text-purple-600 mb-6">Choose ChatGPT When:</h3>
+                <ul class="space-y-3 text-sm text-slate-600">
+                  <li class="flex items-start"><i class="fas fa-check text-blue-500 mr-2 mt-1"></i>Creating English marketing content requiring nuanced fluency</li>
+                  <li class="flex items-start"><i class="fas fa-check text-blue-500 mr-2 mt-1"></i>Implementing healthcare applications with HIPAA compliance</li>
+                  <li class="flex items-start"><i class="fas fa-check text-blue-500 mr-2 mt-1"></i>Prioritizing ease of use for non-technical teams</li>
+                  <li class="flex items-start"><i class="fas fa-check text-blue-500 mr-2 mt-1"></i>Requiring low-latency interaction (&lt;3 seconds)</li>
+                  <li class="flex items-start"><i class="fas fa-check text-blue-500 mr-2 mt-1"></i>Voice-first interfaces are primary requirement</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Conclusion Section -->
+      <section id="conclusion" class="py-16 bg-white">
+        <div class="container mx-auto px-8">
+          <div class="max-w-4xl mx-auto">
+            <h2 class="font-tiempos text-4xl font-bold text-slate-800 mb-8">Conclusion: The Future of AI Assistance</h2>
+
+            <div class="prose prose-lg max-w-none">
+              <div class="insight-highlight">
+                <h3 class="font-semibold text-lg mb-2"><i class="fas fa-forward mr-2"></i>The Convergence of Capabilities</h3>
+                <p>The competition between Kimi 2.5 and ChatGPT exemplifies how rapidly the AI landscape evolves. Kimi's January 2026 release demonstrates that frontier capabilities can be delivered at <strong>2% of the cost</strong> of closed alternatives, forcing a fundamental reconsideration of AI economics.</p>
+              </div>
+
+              <h3 class="font-tiempos text-2xl font-semibold text-slate-700 mt-8 mb-4">Final Recommendations for Different User Profiles</h3>
+
+              <div class="grid md:grid-cols-2 gap-6 my-8">
+                <div class="comparison-card p-6">
+                  <h4 class="font-semibold text-lg text-blue-600 mb-3"><i class="fas fa-code mr-2"></i>Developers &amp; Technical Founders</h4>
+                  <p class="text-sm text-slate-600 mb-3">Adopt a hybrid architecture: Kimi API for high-volume operations, ChatGPT for critical accuracy tasks.</p>
+                  <ul class="text-xs text-slate-600 space-y-1">
+                    <li>• Leverage Kimi's 200× cost savings</li>
+                    <li>• Use Agent Swarm for complex projects</li>
+                    <li>• Consider self-hosting for data sovereignty</li>
+                  </ul>
+                </div>
+
+                <div class="comparison-card p-6">
+                  <h4 class="font-semibold text-lg text-green-600 mb-3"><i class="fas fa-pencil-alt mr-2"></i>Content Creators &amp; Marketers</h4>
+                  <p class="text-sm text-slate-600 mb-3">Deploy based on language markets and content volume requirements.</p>
+                  <ul class="text-xs text-slate-600 space-y-1">
+                    <li>• ChatGPT for English creative writing</li>
+                    <li>• Kimi for Chinese market penetration</li>
+                    <li>• Cost efficiency for high-volume SEO content</li>
+                  </ul>
+                </div>
+
+                <div class="comparison-card p-6">
+                  <h4 class="font-semibold text-lg text-purple-600 mb-3"><i class="fas fa-briefcase mr-2"></i>Enterprise &amp; Healthcare</h4>
+                  <p class="text-sm text-slate-600 mb-3">Choose based on compliance requirements and ecosystem integration.</p>
+                  <ul class="text-xs text-slate-600 space-y-1">
+                    <li>• ChatGPT Pro for healthcare compliance</li>
+                    <li>• Kimi for cost-effective back-office automation</li>
+                    <li>• Hybrid deployments for optimal results</li>
+                  </ul>
+                </div>
+
+                <div class="comparison-card p-6">
+                  <h4 class="font-semibold text-lg text-amber-600 mb-3"><i class="fas fa-graduation-cap mr-2"></i>Budget-Conscious Startups</h4>
+                  <p class="text-sm text-slate-600 mb-3">Kimi democratizes access to frontier AI capabilities without prohibitive costs.</p>
+                  <ul class="text-xs text-slate-600 space-y-1">
+                    <li>• Free tier and pay-as-you-go pricing</li>
+                    <li>• Open-source educational opportunities</li>
+                    <li>• Unencumbered commercialization</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-slate-50 p-8 rounded-xl border-l-4 border-blue-500 mt-8">
+                <p class="text-lg text-slate-700 leading-relaxed italic">
+                  "The London-Vienna weather test ultimately symbolizes the choice facing AI users in 2026: transparent, methodical, cost-effective intelligence versus streamlined, rapid, premium-priced assistance. For most organizations, the answer will increasingly be 'both'—deploying each tool where its strengths shine while enjoying the competitive pressure that drives innovation, reduces costs, and expands accessibility across the entire AI ecosystem."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer with Citations -->
+      <footer class="bg-slate-800 text-white py-12">
+        <div class="container mx-auto px-8">
+          <div class="max-w-4xl mx-auto">
+            <h3 class="font-tiempos text-xl font-semibold mb-6">References &amp; Sources</h3>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+              <div class="space-y-2">
+                <p>
+                  <a href="https://www.yiboot.com/article/userguide/ai-selection-guide-2025.html" class="citation-link text-blue-300">[1]</a> AI Selection Guide 2025 - YiBoot
+                </p>
+                <p>
+                  <a href="https://blogs.novita.ai/kimi-vs-chatgpt-helping-you-match-each-task-to-its-strongest-model/" class="citation-link text-blue-300">[2]</a> Kimi vs ChatGPT Task Matching - Novita AI
+                </p>
+                <p>
+                  <a href="https://www.linkedin.com/posts/appenz_alibaba-backed-moonshot-releases-new-kimi-activity-7350958226462425088-h_zJ" class="citation-link text-blue-300">[3]</a> Moonshot AI Kimi Release - LinkedIn
+                </p>
+                <p>
+                  <a href="https://skywork.ai/skypage/en/kimi-deep-dive-ai-swarm/2016344552339824640" class="citation-link text-blue-300">[4]</a> Kimi Deep Dive AI Swarm - Skywork
+                </p>
+                <p>
+                  <a href="https://kimi-k25.com/" class="citation-link text-blue-300">[5]</a> Kimi K25 Official Documentation
+                </p>
+              </div>
+              <div class="space-y-2">
+                <p>
+                  <a href="https://www.kimi.com/" class="citation-link text-blue-300">[6]</a> Kimi Official Website
+                </p>
+                <p>
+                  <a href="https://arxiv.org/html/2305.18486" class="citation-link text-blue-300">[7]</a> Agent Swarm Research Paper - arXiv
+                </p>
+                <p>
+                  <a href="https://openai.com/index/introducing-gpt-5/" class="citation-link text-blue-300">[8]</a> GPT-5 Introduction - OpenAI
+                </p>
+                <p>
+                  <a href="https://www.vellum.ai/blog/gpt-5-benchmarks" class="citation-link text-blue-300">[9]</a> GPT-5 Benchmarks - Vellum AI
+                </p>
+                <p>
+                  <a href="https://acecloud.ai/blog/kimi-k2-thinking-vs-gpt-5-1/" class="citation-link text-blue-300">[10]</a> Humanity's Last Exam Results - AceCloud
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+        // Mobile TOC Toggle
+        function toggleTOC() {
+            const toc = document.querySelector('.toc-fixed');
+            toc.classList.toggle('open');
+        }
+
+        // Function to handle mobile TOC toggle button
+        function setupMobileToggle() {
+            const existingToggle = document.querySelector('.mobile-toc-toggle');
+            if (existingToggle) {
+                existingToggle.remove();
+            }
+
+            const toggle = document.createElement('button');
+            toggle.innerHTML = '<i class="fas fa-bars"></i>';
+            toggle.className = 'mobile-toc-toggle fixed top-4 left-4 z-50 bg-white p-3 rounded-lg shadow-lg lg:hidden';
+            toggle.onclick = toggleTOC;
+            document.body.appendChild(toggle);
+        }
+
+        // Function to handle window resize
+        function handleResize() {
+            const toc = document.querySelector('.toc-fixed');
+            if (window.innerWidth > 1024) {
+                toc.classList.remove('open');
+                const toggle = document.querySelector('.mobile-toc-toggle');
+                if (toggle) toggle.remove();
+            } else {
+                setupMobileToggle();
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close TOC on mobile after clicking a link
+                const toc = document.querySelector('.toc-fixed');
+                if (window.innerWidth <= 1024 && toc.classList.contains('open')) {
+                    toc.classList.remove('open');
+                }
+            });
+        });
+
+        // Close TOC when clicking outside on mobile
+        document.addEventListener('click', function(e) {
+            const toc = document.querySelector('.toc-fixed');
+            const toggle = document.querySelector('.mobile-toc-toggle');
+            if (window.innerWidth <= 1024 && 
+                toc.classList.contains('open') && 
+                !toc.contains(e.target) && 
+                (!toggle || !toggle.contains(e.target))) {
+                toc.classList.remove('open');
+            }
+        });
+
+        // Initial setup
+        handleResize();
+        window.addEventListener('resize', handleResize);
+    </script>
+  
+
+
+  <div class="kimi-brand-container">
+    <div class="kimi-brand-close-icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.499 3.50216C12.7226 3.72574 12.7226 4.08825 12.499 4.31184L8.81035 8.00029L12.4972 11.6872C12.7208 11.9107 12.7208 12.2733 12.4972 12.4968C12.2736 12.7204 11.9111 12.7204 11.6875 12.4968L8.00066 8.80998L4.31221 12.4986C4.10582 12.705 3.78106 12.7209 3.55646 12.5463L3.50252 12.4986C3.27893 12.2751 3.27893 11.9126 3.50252 11.689L7.19098 8.00029L3.50107 4.31038C3.27748 4.0868 3.27748 3.72429 3.50107 3.5007C3.72465 3.27711 4.08716 3.27711 4.31075 3.5007L8.00066 7.19061L11.6893 3.50216C11.8957 3.29577 12.2205 3.27989 12.4451 3.45453L12.499 3.50216Z" fill="white" fill-opacity="0.84"></path>
+      </svg>
+    </div>
+
+    <a href="https://www.kimi.com/deep-research" target="_blank" class="kimi-brand-link">
+      <img src="data:image/png;base64,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" alt="Kimi" class="kimi-brand-avatar">
+      <span>Kimi Deep Research</span>
+      <svg width="16" height="16" class="kimi-brand-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.2925 8.54311C14.5253 8.30855 14.5247 7.92983 14.2909 7.69611L10.5986 4.00381C10.3643 3.76949 9.98442 3.76949 9.7501 4.00381C9.51579 4.23812 9.51579 4.61802 9.7501 4.85233L12.4181 7.52038H1.86667C1.5353 7.52038 1.26667 7.78901 1.26667 8.12038C1.26667 8.45175 1.5353 8.72038 1.86667 8.72038H12.4255L9.74857 11.4167C9.51511 11.6519 9.51648 12.0318 9.75164 12.2652C9.9868 12.4987 10.3667 12.4973 10.6002 12.2622L14.2925 8.54311Z" fill="white" fill-opacity="0.84"></path>
+      </svg>
+    </a>
+  </div>
+    <div class="glasp-extension-toaster" style="display: block; width: 320px; margin: unset; padding: unset; border: unset; border-radius: unset; outline: unset; background-color: unset; box-shadow: unset; position: fixed; top: 40px; right: 24px; z-index: 9999;"><template shadowrootmode="open"><div class="glasp-extension" style="font-family: inherit;"></div></template></div><div id="highlighter--hover-tools" style="display: none;">
+    <div id="highlighter--hover-tools--container">
+        <div class="highlighter--icon highlighter--icon-copy" title="Copy"></div>
+        <div class="highlighter--icon highlighter--icon-change-color" title="Change Color"></div>
+        <div class="highlighter--icon highlighter--icon-delete" title="Delete"></div>
+    </div>
+</div><protonpass-root-1913 data-protonpass-role="root" data-protonpass-theme="os"><template shadowrootmode="closed"></template></protonpass-root-1913></body><div class="glasp-extension" style="display: block; width: unset; margin: unset; padding: unset; border: unset; border-radius: unset; outline: unset; background-color: unset; box-shadow: unset; position: fixed; bottom: 16px; right: 16px; z-index: 9999;"><div class="glasp-extension" style="font-family: inherit;"></div></div><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
