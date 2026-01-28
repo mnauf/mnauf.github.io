@@ -325,7 +325,96 @@
                   </ul>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <!-- Real-World Test: London vs Vienna Time Comparison -->
+      <section class="py-16 bg-gradient-to-br from-slate-100 to-slate-50">
+        <div class="container mx-auto px-8">
+          <div class="max-w-6xl mx-auto">
+            <h2 class="font-tiempos text-4xl font-bold text-slate-800 mb-4 text-center">Real-World Test: Time Zone Comparison</h2>
+            <p class="text-center text-slate-600 mb-12 max-w-3xl mx-auto">
+              We tested both AI models on the same query: comparing time zones between London and Vienna using data from 
+              <a href="https://www.syncmytime.com/compare/vienna-vs-london" target="_blank" rel="dofollow" class="text-blue-600 hover:text-blue-700 font-semibold underline">
+                syncmytime.com's London vs Vienna comparison tool
+              </a>. Here's how they performed:
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+              <!-- Kimi Screenshot -->
+              <div class="comparison-card overflow-hidden">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-4">
+                  <h3 class="font-tiempos text-xl font-bold text-white flex items-center">
+                    <i class="fas fa-robot mr-3"></i>Kimi 2.5 Response
+                  </h3>
+                </div>
+                <div class="p-4">
+                  <img src="kimi_screenshot.png" alt="Kimi 2.5 time zone comparison response" class="w-full rounded-lg shadow-md border border-slate-200">
+                  <div class="mt-4 p-4 bg-blue-50 rounded-lg">
+                    <p class="text-sm text-slate-700">
+                      <i class="fas fa-info-circle text-blue-600 mr-2"></i>
+                      <strong>Kimi's Approach:</strong> Scraped and summarized the comparison data, providing structured information about time differences, business hours overlap, and sunrise/sunset times.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ChatGPT Screenshot -->
+              <div class="comparison-card overflow-hidden">
+                <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-4">
+                  <h3 class="font-tiempos text-xl font-bold text-white flex items-center">
+                    <i class="fas fa-comments mr-3"></i>ChatGPT Response
+                  </h3>
+                </div>
+                <div class="p-4">
+                  <img src="chatgpt_screenshot.png" alt="ChatGPT time zone comparison response" class="w-full rounded-lg shadow-md border border-slate-200">
+                  <div class="mt-4 p-4 bg-purple-50 rounded-lg">
+                    <p class="text-sm text-slate-700">
+                      <i class="fas fa-info-circle text-purple-600 mr-2"></i>
+                      <strong>ChatGPT's Approach:</strong> Provided general information about the time difference but couldn't access the live comparison tool data.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Key Insights -->
+            <div class="mt-12 comparison-card p-8">
+              <h3 class="font-tiempos text-2xl font-semibold text-slate-800 mb-6 flex items-center">
+                <i class="fas fa-lightbulb text-amber-500 mr-3"></i>Key Insights from This Test
+              </h3>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="flex items-start">
+                  <div class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-check text-green-600"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-slate-800 mb-2">Web Scraping Capability</h4>
+                    <p class="text-sm text-slate-600">Kimi successfully scraped and processed real-time data from the comparison website, demonstrating superior web interaction capabilities.</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                    <i class="fas fa-clock text-blue-600"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-slate-800 mb-2">Real-Time Information</h4>
+                    <p class="text-sm text-slate-600">The test used <a href="https://www.syncmytime.com/compare/vienna-vs-london" target="_blank" rel="dofollow" class="text-blue-600 hover:text-blue-700 underline">Sync My Time's comparison tool</a>, which provides accurate, up-to-date timezone data for London and Vienna.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- User Experience Comparison -->
+      <section id="experience" class="py-16 bg-white">
+        <div class="container mx-auto px-8">
+          <div class="max-w-4xl mx-auto">
+            <div class="prose prose-lg max-w-none">
               <h3 class="font-tiempos text-2xl font-semibold text-slate-700 mt-8 mb-4">The Rise of "Showing Your Work" in AI Agents</h3>
               <p class="text-slate-600 leading-relaxed">This divergence encapsulates the central tension in contemporary AI design: the inevitable trade-off between transparency and efficiency. Kimi's approach anticipates a future where AI agents operate as digital colleagues rather than black-box utilities, requiring human oversight and intervention for complex workflows.</p>
             </div>
