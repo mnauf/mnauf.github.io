@@ -31,6 +31,24 @@
         .menu-item:hover {
             background-color: #555;
         }
+
+        .intro-with-clock {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+
+        .intro-text {
+          flex: 1 1 340px;
+          min-width: 260px;
+        }
+
+        .intro-clock {
+          flex: 0 0 auto;
+          text-align: center;
+        }
   </style>
 
   </head>
@@ -57,20 +75,6 @@
       }
   </script>
 
-    <div style="text-align:center;margin:20px 0;">
-      <script
-        src="https://www.syncmytime.com/widget/clock.js"
-        data-timezone="Europe/London"
-        data-label="London Time"
-        data-theme="purple"
-        data-clock-type="round"
-        data-width="260"
-        data-height="200"
-        async
-      ></script>
-    </div>
-
-
     <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
@@ -80,14 +84,30 @@
                 <p class="name" style="text-align: center;">
                   Muhammad Naufil
                 </p>
-                <p>I am a computer vision research engineer at <a href="https://retrocausal.ai">Retrocausal</a> in Karachi, where I work on human action recognition and 3D human pose estimation.
-                </p>
-                <p>
-                  At Retrocausal I've worked on <a href="https://retrocausal.ai/">AI Copilot for Manufacturing Assembly Optimization</a>,  <a href="https://retrocausal.ai/guidance-analytics-and-trace/">Guidance Analytics and Trace</a> and <a href="https://retrocausal.ai/ergonomic-safety/">Ergonomic Safety</a>.
-                </p>
-                <p>
-                  I'm interested in Vision Language Models, Computer Graphics, 3D vision, 3D Human Pose Estimation, and Human Action Recognition.
-                </p>
+                <div class="intro-with-clock">
+                  <div class="intro-text">
+                    <p>I am a computer vision research engineer at <a href="https://retrocausal.ai">Retrocausal</a> in Karachi, where I work on human action recognition and 3D human pose estimation.
+                    </p>
+                    <p>
+                      At Retrocausal I've worked on <a href="https://retrocausal.ai/">AI Copilot for Manufacturing Assembly Optimization</a>,  <a href="https://retrocausal.ai/guidance-analytics-and-trace/">Guidance Analytics and Trace</a> and <a href="https://retrocausal.ai/ergonomic-safety/">Ergonomic Safety</a>.
+                    </p>
+                    <p>
+                      I'm interested in Vision Language Models, Computer Graphics, 3D vision, 3D Human Pose Estimation, and Human Action Recognition.
+                    </p>
+                  </div>
+                  <div class="intro-clock">
+                    <script
+                      src="https://www.syncmytime.com/widgets/clock.js"
+                      data-timezone="Europe/London"
+                      data-label="London Time"
+                      data-theme="purple"
+                      data-clock-type="round"
+                      data-width="260"
+                      data-height="200"
+                      async
+                    ></script>
+                  </div>
+                </div>
                 <p style="text-align:center">
                   <a href="mailto:m.naufil1@gmail.com">Email</a> &nbsp;/&nbsp;
                   <a href="https://scholar.google.com/citations?user=LHvJ9CUAAAAJ&hl=en">Google Scholar</a> &nbsp;/&nbsp;
