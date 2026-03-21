@@ -1,442 +1,800 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+  <meta charset="UTF-8">
+  <title>Muhammad Naufil — AI Engineer</title>
+  <meta name="author" content="Muhammad Naufil">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Muhammad Naufil — AI Engineer working on computer vision, LLMs, and agentic AI systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <title>Muhammad Naufil</title>
+    :root {
+      --accent: #2563eb;
+      --accent-light: #dbeafe;
+      --accent-dark: #1d4ed8;
+      --purple: #7c3aed;
+      --text: #111827;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #ffffff;
+      --bg-subtle: #f9fafb;
+      --radius: 12px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+      --shadow-hover: 0 4px 20px rgba(37,99,235,0.12), 0 1px 4px rgba(0,0,0,0.08);
+    }
 
-    <meta name="author" content="Muhammad Naufil">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    html { scroll-behavior: smooth; }
 
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
-    <style>
-      /* Define the styles for the menu bar */
-      .menu-bar {
-            background-color: #FFFFFF;
-            color: #fff;
-            overflow: hidden;
-        }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 15px;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
 
-        /* Style the individual menu items */
-        .menu-item {
-            float: right;
-            display: block;
-            padding: 15px 20px;
-            text-align: center;
-            text-decoration: none;
-        }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-dark); text-decoration: underline; }
 
-        /* Add a hover effect */
-        .menu-item:hover {
-            background-color: #555;
-        }
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
 
-        .intro-with-clock {
-          display: flex;
-          align-items: flex-start;
-          justify-content: space-between;
-          gap: 16px;
-          flex-wrap: wrap;
-        }
+    .nav-inner {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
 
-        .intro-text {
-          flex: 1 1 340px;
-          min-width: 260px;
-        }
+    .nav-name {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
 
-        .intro-clock {
-          flex: 0 0 auto;
-          text-align: center;
-        }
+    .nav-links { display: flex; gap: 4px; }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: var(--bg-subtle);
+      text-decoration: none;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 64px 0 48px;
+      display: flex;
+      gap: 52px;
+      align-items: flex-start;
+    }
+
+    .hero-text { flex: 1; min-width: 0; }
+
+    .hero-photo { flex: 0 0 auto; }
+
+    .hero-photo img {
+      width: 156px;
+      height: 156px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--border);
+      display: block;
+    }
+
+    h1.name {
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 6px;
+      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-bio p {
+      color: #374151;
+      margin-bottom: 13px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color 0.15s, box-shadow 0.15s, background 0.15s, color 0.15s;
+    }
+
+    .hero-link:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.08);
+      color: var(--accent);
+      text-decoration: none;
+      background: var(--accent-light);
+    }
+
+    /* ── Sections ── */
+    section {
+      padding: 52px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+      color: var(--text);
+    }
+
+    /* ── Tags ── */
+    .tag {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .tag-venue { background: #fef3c7; color: #92400e; }
+    .tag-ai    { background: #ede9fe; color: #5b21b6; }
+    .tag-cv    { background: #dcfce7; color: #166534; }
+    .tag-nlp   { background: #dbeafe; color: #1e40af; }
+    .tag-prod  { background: #fce7f3; color: #9d174d; }
+
+    /* ── Publication cards ── */
+    .pub-card {
+      display: flex;
+      gap: 22px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 14px;
+      background: var(--bg);
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .pub-card:hover {
+      box-shadow: var(--shadow-hover);
+      border-top-color: #bfdbfe;
+      border-right-color: #bfdbfe;
+      border-bottom-color: #bfdbfe;
+    }
+
+    .pub-thumb {
+      flex: 0 0 116px;
+      width: 116px;
+      height: 88px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-subtle);
+    }
+
+    .pub-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .pub-thumb-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      background: linear-gradient(135deg, #dbeafe 0%, #ede9fe 100%);
+    }
+
+    .pub-content { flex: 1; min-width: 0; }
+
+    .pub-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .pub-title a { color: var(--text); }
+    .pub-title a:hover { color: var(--accent); text-decoration: none; }
+
+    .pub-authors {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .pub-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .pub-links { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .pub-link {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      padding: 3px 10px;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .pub-link:hover {
+      background: var(--accent-light);
+      text-decoration: none;
+    }
+
+    /* ── Project grid ── */
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .project-card {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--bg);
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s, border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-hover);
+      border-top-color: #bfdbfe;
+      border-right-color: #bfdbfe;
+      border-bottom-color: #bfdbfe;
+    }
+
+    .project-card.featured {
+      grid-column: span 2;
+      background: linear-gradient(135deg, #fafbff 0%, #f0f4ff 100%);
+      border-color: #bfdbfe;
+    }
+
+    .project-icon {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .project-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .project-title a { color: var(--text); }
+    .project-title a:hover { color: var(--accent); text-decoration: none; }
+
+    .project-desc {
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 14px;
+    }
+
+    .project-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    /* ── Work Experience cards ── */
+    .work-card {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      background: var(--bg);
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s;
+    }
+
+    .work-card:hover { box-shadow: var(--shadow-hover); }
+
+    .work-thumb {
+      flex: 0 0 76px;
+      width: 76px;
+      height: 76px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-subtle);
+    }
+
+    .work-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .work-content { flex: 1; min-width: 0; }
+
+    .work-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .work-title a { color: var(--text); }
+    .work-title a:hover { color: var(--accent); text-decoration: none; }
+
+    .work-org {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .work-desc {
+      font-size: 14px;
+      color: #374151;
+      line-height: 1.6;
+    }
+
+    /* ── Card color accents ── */
+    .pub-card   { border-left-width: 4px; }
+    .work-card  { border-left-width: 4px; }
+    .project-card { border-left-width: 4px; }
+
+    /* Publications */
+    #publications > .pub-card:nth-child(2) { border-left-color: #7c3aed; background: linear-gradient(to right, #f5f3ff 0%, #fff 180px); }
+    #publications > .pub-card:nth-child(3) { border-left-color: #3b82f6; background: linear-gradient(to right, #eff6ff 0%, #fff 180px); }
+    #publications > .pub-card:nth-child(4) { border-left-color: #14b8a6; background: linear-gradient(to right, #f0fdfa 0%, #fff 180px); }
+    #publications > .pub-card:nth-child(5) { border-left-color: #10b981; background: linear-gradient(to right, #ecfdf5 0%, #fff 180px); }
+
+    /* Experience */
+    #experience > .work-card:nth-child(2) { border-left-color: #f43f5e; background: linear-gradient(to right, #fff1f2 0%, #fff 120px); }
+    #experience > .work-card:nth-child(3) { border-left-color: #6366f1; background: linear-gradient(to right, #eef2ff 0%, #fff 120px); }
+    #experience > .work-card:nth-child(4) { border-left-color: #f59e0b; background: linear-gradient(to right, #fffbeb 0%, #fff 120px); }
+    #experience > .work-card:nth-child(5) { border-left-color: #3b82f6; background: linear-gradient(to right, #eff6ff 0%, #fff 120px); }
+    #experience > .work-card:nth-child(6) { border-left-color: #22c55e; background: linear-gradient(to right, #f0fdf4 0%, #fff 120px); }
+    #experience > .work-card:nth-child(7) { border-left-color: #a855f7; background: linear-gradient(to right, #faf5ff 0%, #fff 120px); }
+
+    /* Projects */
+    .project-grid > .project-card:nth-child(1) { border-left-color: #2563eb; }
+    .project-grid > .project-card:nth-child(2) { border-left-color: #14b8a6; background: linear-gradient(to right, #f0fdfa 0%, #fff 120px); }
+    .project-grid > .project-card:nth-child(3) { border-left-color: #f97316; background: linear-gradient(to right, #fff7ed 0%, #fff 120px); }
+    .project-grid > .project-card:nth-child(4) { border-left-color: #0ea5e9; background: linear-gradient(to right, #f0f9ff 0%, #fff 120px); }
+    .project-grid > .project-card:nth-child(5) { border-left-color: #f59e0b; background: linear-gradient(to right, #fffbeb 0%, #fff 120px); }
+    .project-grid > .project-card:nth-child(6) { border-left-color: #7c3aed; background: linear-gradient(to right, #f5f3ff 0%, #fff 120px); }
+    .project-grid > .project-card:nth-child(7) { border-left-color: #f43f5e; background: linear-gradient(to right, #fff1f2 0%, #fff 120px); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    footer a { color: var(--text-muted); }
+    footer a:hover { color: var(--accent); text-decoration: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .hero { flex-direction: column-reverse; gap: 24px; padding: 36px 0 28px; }
+      .hero-photo img { width: 112px; height: 112px; }
+      h1.name { font-size: 30px; }
+      .project-grid { grid-template-columns: 1fr; }
+      .project-card.featured { grid-column: span 1; }
+      .pub-card { flex-direction: column; }
+      .pub-thumb { width: 100%; height: 140px; }
+      .nav-links a { padding: 6px 8px; font-size: 13px; }
+    }
   </style>
+</head>
+<body>
 
-  </head>
+  <nav>
+    <div class="nav-inner">
+      <span class="nav-name">Muhammad Naufil</span>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="talks.html">Talks</a>
+      </div>
+    </div>
+  </nav>
 
-  <body>
-    <div class="menu-bar">
-      <a class="menu-item" href="/blog.html">Blog</a>
-      <a class="menu-item" href="/talks.html" onclick="loadTalks()">Talks</a>
-      <a class="menu-item" href="/">Home</a>
+  <div class="container">
+
+    <!-- ── Hero ── -->
+    <div class="hero">
+      <div class="hero-text">
+        <h1 class="name">Muhammad Naufil</h1>
+        <p class="hero-subtitle">AI Engineer &nbsp;·&nbsp; MS CS @ Saarland University</p>
+        <div class="hero-bio">
+          <p>I build AI systems at the intersection of computer vision, LLMs, and agentic workflows. Currently pursuing an MS in Computer Science at <strong>Saarland University</strong> and actively looking for part-time opportunities.</p>
+          <p>Previously a Computer Vision Working Student at <a href="https://cispa.de">CISPA</a> on deepfake detection — finetuning vision foundation models at scale on clusters of 8×A100 GPUs. Also a HiWi at <a href="https://www.mpi-inf.mpg.de">MPI Informatics</a> on monadic co-speech gesture synthesis using latent diffusion models, a Computer Vision Engineer at <a href="https://retrocausal.ai">Retrocausal</a> (Redmond, WA) for 3+ years building markerless MoCap and action segmentation systems deployed at Ford, Honda, and Nissan, and a Research Assistant at <a href="https://zema.de/">Zema</a> exploring LLM instruction-following, RAG, and AI agent frameworks.</p>
+          <p>On the side I build agentic AI products — including an end-to-end blogger outreach tool powered by Openclaw, and an LLM companion with vision and persistent memory.</p>
+        </div>
+        <div class="hero-links">
+          <a class="hero-link" href="mailto:m.naufil1@gmail.com">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email
+          </a>
+          <a class="hero-link" href="https://scholar.google.com/citations?user=LHvJ9CUAAAAJ&hl=en">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 512 512"><path d="M256 411.12L0 202.667 256 0l256 202.667zM256 489.671l-234.667-181.204 234.667 203.529 234.667-203.53z"/></svg>
+            Scholar
+          </a>
+          <a class="hero-link" href="https://github.com/mnauf/">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+          </a>
+          <a class="hero-link" href="https://www.linkedin.com/in/mnauf/">
+            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <a href="images/Muhammad_Naufil.jpg">
+          <img src="images/photo_circle.png" alt="Muhammad Naufil">
+        </a>
+      </div>
     </div>
 
-    <script>
-      // JavaScript function to load talks.html dynamically
-      function loadTalks() {
-          // Use AJAX or a similar method to load talks.html content into a div on the current page
-          // Here's a simple example using fetch:
-          fetch('/talks.html')
-              .then(response => response.text())
-              .then(data => {
-                  // Replace the content of a div with the loaded HTML
-                  document.getElementById('content-container').innerHTML = data;
-              })
-              .catch(error => console.error('Error loading talks.html:', error));
-      }
-  </script>
+    <!-- ── Work Experience ── -->
+    <section id="experience">
+      <h2>Work Experience</h2>
 
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Muhammad Naufil
-                </p>
-                <div class="intro-with-clock">
-                  <div class="intro-text">
-                    <p>I am a computer vision research engineer at <a href="https://retrocausal.ai">Retrocausal</a> in Karachi, where I work on human action recognition and 3D human pose estimation.
-                    </p>
-                    <p>
-                      At Retrocausal I've worked on <a href="https://retrocausal.ai/">AI Copilot for Manufacturing Assembly Optimization</a>,  <a href="https://retrocausal.ai/guidance-analytics-and-trace/">Guidance Analytics and Trace</a> and <a href="https://retrocausal.ai/ergonomic-safety/">Ergonomic Safety</a>.
-                    </p>
-                    <p>
-                      I'm interested in Vision Language Models, Computer Graphics, 3D vision, 3D Human Pose Estimation, and Human Action Recognition.
-                    </p>
-                  </div>
-                  <div class="intro-clock">
-                    <script
-                      src="https://www.syncmytime.com/widgets/clock.js"
-                      data-timezone="Europe/London"
-                      data-label="London Time"
-                      data-theme="purple"
-                      data-clock-type="round"
-                      data-width="260"
-                      data-height="200"
-                      async
-                    ></script>
-                  </div>
-                </div>
-                <p style="text-align:center">
-                  <a href="mailto:m.naufil1@gmail.com">Email</a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.com/citations?user=LHvJ9CUAAAAJ&hl=en">Google Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/mnauf/">Github</a> &nbsp;/&nbsp;
-                  <a href="https://www.linkedin.com/in/mnauf/">Linkedin</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:40%;max-width:40%">
-                <a href="images/Muhammad_Naufil.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/photo_circle.png" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2>Publications</h2>
-              </td>
-            </tr>
-          </tbody></table>
+      <!-- Detesia / CISPA -->
+      <div class="work-card">
+        <div class="work-thumb">
+          <img src="cispa.svg" alt="CISPA">
+        </div>
+        <div class="work-content">
+          <div class="work-title">Computer Vision Working Student — Deepfake Detection</div>
+          <div class="work-org">Detesia &nbsp;|&nbsp; CISPA Startup &nbsp;·&nbsp; Oct 2024 – Dec 2025</div>
+          <p class="work-desc">Finetuned vision foundation models on a large-scale collection of deepfakes using clusters of 8×A100 GPUs. Conducted large-scale generation of synthetic deepfake datasets to expand training coverage and improve detection robustness.</p>
+        </div>
+      </div>
 
-    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr onmouseout="zipnerf_stop()" onmouseover="zipnerf_start()"  bgcolor="#FFFFFF">
-        <td style="padding:20px;width:25%;vertical-align:middle">
-          <div class="one">
-            <img src='images/permutation.jpg' width="160">
+      <!-- Zema -->
+      <div class="work-card">
+        <div class="work-thumb">
+          <img src="zema.png" alt="Zema">
+        </div>
+        <div class="work-content">
+          <div class="work-title">Research Assistant — LLMs &amp; AI Agents</div>
+          <div class="work-org">Zema &nbsp;|&nbsp; Saarbrücken &nbsp;·&nbsp; Aug 2024 – Jun 2025</div>
+          <p class="work-desc">Evaluated instruction-following and few-shot learning of the latest open- and closed-source LLMs. Built a personal AI companion using GPT-4o with function calling and RAG retrieval (Pinecone). Explored agentic frameworks including n8n and crewAI to build AI workflows and automation pipelines.</p>
+        </div>
+      </div>
+
+      <!-- MPI Informatics -->
+      <div class="work-card">
+        <div class="work-thumb">
+          <img src="mpi.jpeg" alt="MPI Informatics">
+        </div>
+        <div class="work-content">
+          <div class="work-title"><a href="https://www.mpi-inf.mpg.de">HiWi — Monadic Co-Speech Gesture Synthesis</a></div>
+          <div class="work-org">MPI Informatics &nbsp;|&nbsp; Saarbrücken &nbsp;·&nbsp; Jun – Sep 2024</div>
+          <p class="work-desc">Built up expertise in diffusion models progressively: started with unconditional image generation, then conditioned models on class labels to understand classifier-free guidance. Graduated to latent diffusion models for monadic co-speech gesture synthesis — first unconditional, then conditioned on speech transcription to generate gestures that naturally accompany spoken language.</p>
+        </div>
+      </div>
+
+      <!-- Retrocausal: Manual Assembly Copilot -->
+      <div class="work-card">
+        <div class="work-thumb">
+          <img src="images/assembly_copilot.jpg" alt="Manual Assembly Copilot">
+        </div>
+        <div class="work-content">
+          <div class="work-title"><a href="https://retrocausal.ai/live-worker-guidance/">Live Worker Guidance</a></div>
+          <div class="work-org">Retrocausal, Inc. &nbsp;|&nbsp; Redmond, WA &nbsp;·&nbsp; Nov 2020 – Mar 2024</div>
+          <p class="work-desc">Empower your operators, engineers, and managers to dramatically boost the quality and productivity of your manual processes. Create digital mistake-proofing mechanisms for a variety of assembly and packing processes. Pathfinder tracks individual steps of an assembly process, and offers audible and visual alerts to help associates avoid mistakes.</p>
+        </div>
+      </div>
+
+      <!-- Retrocausal: Guidance, Analytics and Trace -->
+      <div class="work-card">
+        <div class="work-thumb">
+          <img src="images/analytics.png" alt="Guidance Analytics and Trace">
+        </div>
+        <div class="work-content">
+          <div class="work-title"><a href="https://retrocausal.ai/video-traceability-analytics/">Guidance, Analytics &amp; Trace</a></div>
+          <div class="work-org">Retrocausal</div>
+          <p class="work-desc">Collects timing data for every cycle performed on a line, at a fine-grained level. It identifies non-value add work as well as most efficiently performed cycles. These capabilities directly aid industrial engineers in improving processes. Additionally, Pathfinder grades individual assembly sessions, versus ideal number of cycles that could have been performed and considering operator mistakes. This further helps engineers compare and contrast different sessions and work styles to rapidly improve processes.</p>
+        </div>
+      </div>
+
+      <!-- Retrocausal: Monocular Camera MoCap -->
+      <div class="work-card">
+        <div class="work-thumb">
+          <img src="images/ergo_sketch.png" alt="Monocular Camera MoCap System">
+        </div>
+        <div class="work-content">
+          <div class="work-title"><a href="https://retrocausal.ai/ergonomic-safety/">Monocular Camera MoCap System</a></div>
+          <div class="work-org">Retrocausal</div>
+          <p class="work-desc">Pathfinder provides computer vision based "in-process" health and safety analytics as part of the platform. The solution allows analyzing videos recorded from ordinary phone cameras, either using Pathfinder Android or iPhone app or by uploading videos through the web portal. Pathfinder uses its state-of-the-art computer vision technology to compute 3D skeletal poses and extract 3D joint angles. Our technology is optimized for industrial use cases emphasizing a certain degree of robustness to partial obfuscation as well as extreme postures of the human body. This has significant advantages over wearables, goniometers, or Marker-Based Motion Capture Systems.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Projects ── -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+
+        <!-- LinkInsertion.ai — featured -->
+        <div class="project-card featured">
+          <img src="linkinsertion.jpg" alt="LinkInsertion.ai logo" style="width:56px;height:56px;border-radius:12px;object-fit:cover;margin-bottom:12px;">
+          <div class="project-title"><a href="https://linkinsertion.ai">LinkInsertion.ai</a></div>
+          <p class="project-desc">Agentic AI tool for blogger outreach, built with Openclaw (formerly ClawdCode). A single click triggers the full pipeline: crawls the web to find relevant articles, mines editor contact emails, writes personalized outreach emails tailored to each article, and sends them — complete end-to-end automation of the link insertion workflow.</p>
+          <div class="project-tags">
+            <span class="tag tag-ai">Agentic AI</span>
+            <span class="tag tag-nlp">Openclaw</span>
+            <span class="tag tag-prod">Production</span>
           </div>
-          <script type="text/javascript">
-            function zipnerf_start() {
-              document.getElementById('zipnerf_image').style.opacity = "1";
-            }
+        </div>
 
-            function zipnerf_stop() {
-              document.getElementById('zipnerf_image').style.opacity = "0";
-            }
-            zipnerf_stop()
-          </script>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:middle">
-          <a href="https://retrocausal.ai/rp-5-permutation-aware-action-segmentation-via-unsupervised-frame-to-segment-alignment/">
-            <span class="papertitle">Permutation-Aware Action Segmentation via Unsupervised Frame-to-Segment Alignment</span>
-          </a>
-          <br>
-          <a href="https://scholar.google.com.au/citations?user=8JbK0V8AAAAJ&hl=en">Quoc-Huy Tran</a>,
-          <a href="https://pk.linkedin.com/in/ahmedrazamehmood">Ahmed Raza Mehmood</a>,
-          <a href="https://pk.linkedin.com/in/muhammad4hmed">Muhammad Ahmed</a>,
-          <strong>Muhammad Naufil</strong>,
-          <a href="https://pk.linkedin.com/in/anas-zafar/">Anas Zafar</a>,
-          <a href="https://www.linkedin.com/in/andreykonin">Andrey Konin</a>,
-          <a href="https://scholar.google.com/citations?user=xE_pSDAAAAAJ&hl=en">Zeeshan Zia</a>
-          <br>
-          Accepted <em>WACV</em>, 2024 &nbsp
-          <br>
-          <a href="https://arxiv.org/pdf/2305.19478">arXiv</a> |
-          <a href="https://www.youtube.com/watch?v=ZgvbwD3h-fc">Youtube</a>
-          <p></p>
-          <p>
-            This paper presents an unsupervised transformer-based framework for temporal activity segmentation which leverages not only frame-level cues but also segment-level cues. This is in contrast with previous methods which often rely on frame-level information only. Our approach begins with a frame-level prediction module which estimates framewise action classes via a transformer encoder. 
-            The frame-level prediction module is trained in an unsupervised manner via
-            temporal optimal transport. To exploit segment-level information, we utilize a segment-level prediction module and a
-            frame-to-segment alignment module. The former includes
-            a transformer decoder for estimating video transcripts,
-            while the latter matches frame-level features with segmentlevel features, yielding permutation-aware segmentation results. Moreover, inspired by temporal optimal transport,
-            we introduce simple-yet-effective pseudo labels for unsupervised training of the above modules. Our experiments on
-            four public datasets, i.e., 50 Salads, YouTube Instructions,
-            Breakfast, and Desktop Assembly show that our approach
-            achieves comparable or better performance than previous
-            methods in unsupervised activity segmentation.          
-          </p>
-        </td>
-      </tr>
-
-      <tr onmouseout="zipnerf_stop()" onmouseover="zipnerf_start()"  bgcolor="#FFFFFF">
-        <td style="padding:20px;width:25%;vertical-align:middle">
-          <div class="one">
-            <!-- <div class="two" id='zipnerf_image'>
-              <video  width=100% height=100% muted autoplay loop>
-            <source src="images/zipnerf.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-            </video></div> -->
-            <img src='images/action_segmentation.png' width="160">
+        <!-- AI Companion (RAG + Vision) -->
+        <div class="project-card">
+          <div class="project-icon">👁️</div>
+          <div class="project-title"><a href="https://youtu.be/eWvHvg3ZD20">Personal AI Companion</a></div>
+          <p class="project-desc">LLM-powered companion with a pair of eyes to perceive the world around you. Uses RAG retrieval (Pinecone) to recall past conversations like a true friend, and function calling to take actions. Token-efficient by design — only processes camera images when it deems necessary, keeping costs low without sacrificing context.</p>
+          <div class="project-tags">
+            <span class="tag tag-nlp">RAG</span>
+            <span class="tag tag-ai">Function Calling</span>
+            <span class="tag tag-cv">Vision</span>
           </div>
-          <script type="text/javascript">
-            function zipnerf_start() {
-              document.getElementById('zipnerf_image').style.opacity = "1";
-            }
+        </div>
 
-            function zipnerf_stop() {
-              document.getElementById('zipnerf_image').style.opacity = "0";
-            }
-            zipnerf_stop()
-          </script>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:middle">
-          <a href="https://retrocausal.ai/action-segmentation-using-2d-skeleton-heatmaps/">
-            <span class="papertitle">Action Segmentation Using 2D Skeleton Heatmaps</span>
-          </a>
-          <br>
-          <a href="https://pk.linkedin.com/in/syedwaleedhyder">Syed Waleed Haider</a>,
-          <a href="https://pk.linkedin.com/in/muhammad-usama-630722206">Muhammad Usama</a>,
-          <a href="https://pk.linkedin.com/in/anas-zafar/">Anas Zafar</a>,
-          <strong>Muhammad Naufil</strong>,
-          <a href="https://www.linkedin.com/in/andreykonin">Andrey Konin</a>,
-          <a href="https://scholar.google.com/citations?user=xE_pSDAAAAAJ&hl=en">Zeeshan Zia</a>,
-          <a href="https://scholar.google.com.au/citations?user=8JbK0V8AAAAJ&hl=en">Quoc-Huy Tran</a>,
-          <br>
-          Accepted at <em>ICRA</em>, 2024 &nbsp
-          <br>
-          <!-- <a href="http://jonbarron.info/zipnerf">project page</a> -->
-          <!-- / -->
-          <!-- <a href="https://www.youtube.com/watch?v=xrrhynRzC8k">video</a> -->
-          <!-- / -->
-          <a href="https://arxiv.org/pdf/2309.06462.pdf">arXiv</a>
-          <p></p>
-          <p>
-            This paper presents a 2D skeleton-based action
-            segmentation method with applications in fine-grained human
-            activity recognition. In contrast with state-of-the-art methods
-            which directly take sequences of 3D skeleton coordinates
-            as inputs and apply Graph Convolutional Networks (GCNs)
-            for spatiotemporal feature learning, our main idea is to use
-            sequences of 2D skeleton heatmaps as inputs and employ
-            Temporal Convolutional Networks (TCNs) to extract spatiotemporal features. Despite lacking 3D information, our approach
-            yields comparable/superior performances and better robustness
-            against missing keypoints than previous methods on action
-            segmentation datasets. Moreover, we improve the performances
-            further by using both 2D skeleton heatmaps and RGB videos
-            as inputs. To our best knowledge, this is the first work to utilize
-            2D skeleton heatmap inputs and the first work to explore 2D
-            skeleton+RGB fusion for action segmentation.        
-          </p>
-        </td>
-      </tr>
-
-
-      <tr onmouseout="zipnerf_stop()" onmouseover="zipnerf_start()"  bgcolor="#FFFFFF">
-        <td style="padding:20px;width:25%;vertical-align:middle">
-          <div class="one">
-            <!-- <div class="two" id='zipnerf_image'><video  width=100% height=100% muted autoplay loop>
-            <source src="images/zipnerf.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-            </video></div> -->
-            <img src='images/ismar.jpg' width="160">
+        <!-- Self-Driving Car -->
+        <div class="project-card">
+          <div class="project-icon">🚗</div>
+          <div class="project-title"><a href="https://github.com/mnauf/self-driving-car-fyp">Autonomous Car (FYP)</a></div>
+          <p class="project-desc">Predicts steering angle, detects objects, and classifies traffic lights at 4 FPS on a Jetson Nano. Bachelor thesis at NED University, 2020.</p>
+          <div class="project-tags">
+            <span class="tag tag-cv">Computer Vision</span>
+            <span class="tag tag-ai">Edge AI</span>
           </div>
-          <script type="text/javascript">
-            function zipnerf_start() {
-              document.getElementById('zipnerf_image').style.opacity = "1";
-            }
+        </div>
 
-            function zipnerf_stop() {
-              document.getElementById('zipnerf_image').style.opacity = "0";
-            }
-            zipnerf_stop()
-          </script>
-        </td>
-        <td style="padding:20px;width:75%;vertical-align:middle">
-          <a href="https://ieeexplore.ieee.org/document/9974204">
-            <span class="papertitle">AI-mediated Job Status Tracking in AR as a No-Code service</span>
-          </a>
-          <br>
-          <a href="https://www.linkedin.com/in/andreykonin">Andrey Konin</a>,
-          <a href="https://pk.linkedin.com/in/shakeebsiddiqui">Shakeeb Siddiqui</a>,
-          <a href="https://pk.linkedin.com/in/hasan-gilani">Hasan Gilani</a>,
-          <a href="https://pk.linkedin.com/in/muhammad-mudassir-7024391ab">Muhammad Mudassir</a>,
-          <a href="https://pk.linkedin.com/in/hassan11196">Hassan Ahmed</a>,
-          <a href="https://www.linkedin.com/in/tabanshaukat/">Taban Shaukat</a>,
-          <strong>Muhammad Naufil</strong>,
-          <a href="https://scholar.google.com.pk/citations?user=NaF7zqYAAAAJ&hl=en">Awais Ahmed</a>,
-          <a href="https://scholar.google.com.au/citations?user=8JbK0V8AAAAJ&hl=en">Quoc-Huy Tran</a>,
-          <a href="https://scholar.google.com/citations?user=xE_pSDAAAAAJ&hl=en">Zeeshan Zia</a>
-          <br>
-          Published in <em>ISMAR</em>, 2022 &nbsp
-          <br>
-          <a href="https://ieeexplore.ieee.org/document/9974204">IEEE</a>
-          <p></p>
-          <p>
-            Sophisticated AR experiences that can track the status of a manual assembly or maintenance job and provide corresponding guidance are built by teams of computer vision engineers over several months. These engineers model temporal causation on top of object detection and human skeletal tracking provided by traditional AR and AI SDKs. We demonstrate our Pathfinder system which automatically builds computational models of a complex manual task, such as a manufacturing assembly activity, given recorded demonstrations of the task - without requiring any custom coding. These computational models enable ordinary AR developers to build AI-mediated feedback in minutes instead of months. Keywords: Task Guidance, Computer Vision, Human Computer Interaction, Machine Learning, Industrial Applications     
-          </p>
-        </td>
-      </tr>
-  </tbody></table>
+        <!-- Ship Detection -->
+        <div class="project-card">
+          <div class="project-icon">🚢</div>
+          <div class="project-title"><a href="https://huggingface.co/spaces/competitions/ship-detection">Ship Detection</a></div>
+          <p class="project-desc">HuggingFace competition — pushed mAP to 0.59 with YOLOv5/v7/v8. Key insight: training on evenly-tiled image crops enables zoomed-in detection.</p>
+          <div class="project-tags">
+            <span class="tag tag-cv">Object Detection</span>
+            <span class="tag tag-ai">YOLO</span>
+          </div>
+        </div>
 
-  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-    <tr>
-      <td>
-        <h2>Work Experience</h2>
-      </td>
-    </tr>
-  </tbody></table>
-      
-      
-  <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-    <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src="images/assembly_copilot.jpg" alt="clean-usnob" width="160" height="160">
-      </td>
-      <td width="75%" valign="middle">
-        <a href="https://www.youtube.com/watch?v=cLnrC9pn3j8">
-          <span class="papertitle">Manual Assembly Copilot</span>
-        </a>
-        <br>
-        <em>Retrocausal</em>
-        <br>
-        <p>Empower your operators, engineers, and managers to dramatically boost the quality and productivity of your manual processes. Create digital mistake-proofing mechanisms for a variety of assembly and packing processes. Pathfinder tracks individual steps of an assembly process, and offers audible and visual alerts to help associates avoid mistakes.</p>
-      </td>
-    </tr>
-  </tbody></table>
+        <!-- Bees Detection -->
+        <div class="project-card">
+          <div class="project-icon">🐝</div>
+          <div class="project-title"><a href="https://github.com/mnauf/Bees-ML-Challenge/tree/master">Bees Detection</a></div>
+          <p class="project-desc">Extracted bee centroids from heatmap images to synthesize YOLO-format bounding boxes, then trained YOLOv5 for detection.</p>
+          <div class="project-tags">
+            <span class="tag tag-cv">Object Detection</span>
+            <span class="tag tag-ai">YOLO</span>
+          </div>
+        </div>
 
-  <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-    <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src="images/analytics.png" alt="clean-usnob" width="160" height="160">
-      </td>
-      <td width="75%" valign="middle">
-        <a href="https://retrocausal.ai/guidance-analytics-and-trace/">
-          <span class="papertitle">Guidance, Analytics and Trace</span>
-        </a>
-        <br>
-        <em>Retrocausal</em>
-        <br>
-        <p>Collects timing data for every cycle performed on a line, at a fine-grained level. It identifies non-value add work as well as most efficiently performed cycles. These capabilities directly aid industrial engineers in improving processes. Additionally, Pathfinder grades individual assembly sessions, versus ideal number of cycles that could have been performed and considering operator mistakes. This further helps engineers compare and contrast different sessions and work styles to rapidly improve processes.</p>
-      </td>
-    </tr>
-  </tbody></table>
+        <!-- GPT-2 from Scratch -->
+        <div class="project-card">
+          <div class="project-icon">🤖</div>
+          <div class="project-title"><a href="https://github.com/mnauf/GPT-from-scratch">GPT-2 from Scratch</a></div>
+          <p class="project-desc">Built transformer decoder blocks one-by-one to deeply understand the architecture. Trained two models — one on Shakespeare, one on a subset of OpenWebText.</p>
+          <div class="project-tags">
+            <span class="tag tag-nlp">LLMs</span>
+            <span class="tag tag-ai">PyTorch</span>
+          </div>
+        </div>
 
-  <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-    <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src="images/ergo_sketch.png" alt="clean-usnob" width="160" height="160">
-      </td>
-      <td width="75%" valign="middle">
-        <a href="https://retrocausal.ai/ergonomic-safety/">
-          <span class="papertitle">Monocular Camera MoCap System</span>
-        </a>
-        <br>
-        <em>Retrocausal</em>
-        <br>
-        <p>Pathfinder provides computer vision based “in-process” health and safety analytics as part of the platform. The solution allows analyzing videos recorded from ordinary phone cameras, either using Pathfinder Android or iPhone app or by uploading videos through the web portal. Pathfinder uses its state-of-the-art computer vision technology to compute 3D skeletal poses and extract 3D joint angles. Our technology is optimized for industrial use cases emphasizing a certain degree of robustness to partial obfuscation as well as extreme postures of the human body. This has significant advantages over wearables, goniometers, or Marker-Based Motion Capture Systems. It allows flexible application include the use of a moving camera, and in adapting to crammed or crowded spaces and is therefore easier to scale. Finally the computer vision solution typically captures more information than a small group of markers, e.g. regarding body shape.</p>
-      </td>
-    </tr>
-  </tbody></table>
+        <!-- RedditGPT -->
+        <div class="project-card">
+          <div class="project-icon">💬</div>
+          <div class="project-title"><a href="https://huggingface.co/spaces/mnauf/redditGPT">RedditGPT</a></div>
+          <p class="project-desc">Fine-tuned GPT-2 on public Reddit conversations to capture sentiment on unfolding events in Pakistan. Hosted on HuggingFace Spaces.</p>
+          <div class="project-tags">
+            <span class="tag tag-nlp">NLP</span>
+            <span class="tag tag-ai">Fine-tuning</span>
+          </div>
+        </div>
 
-  <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-    <tr>
-      <td>
-        <h2>Projects</h2>
-      </td>
-    </tr>
-  </tbody></table>
-      
-      
-  <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-    <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src="https://user-images.githubusercontent.com/41832069/246027006-5fe0e6e5-1964-49b9-843e-9fcead65da05.png" alt="clean-usnob" width="160" height="160">
-      </td>
-      <td width="75%" valign="middle">
-        <a href="https://github.com/mnauf/self-driving-car-fyp">
-          <span class="papertitle">Supervised Learning Based Autonomous Car</span>
-        </a>
-        <br>
-        <strong>Muhammad Naufil</strong>, <a href="https://www.linkedin.com/in/faiz-ur-rehman/">Faiz ur Rehman</a>, <a href="https://pk.linkedin.com/in/syed-haziq-222b94193">Syed Muhammad Haziq</a>, <a href="https://www.linkedin.com/in/danish-khalid-aa8293137/">Danish Khalid</a>
-        <br>
-        <em>Bachelor Thesis Project</em>, 2020 at NED University of Engineering & Technology
-        <p>Predicts steering wheel angle, detects object and classifies traffic signal lights at 4 FPS on a Jetson Nano.</p>
-      </td>
-    </tr>
-  </tbody></table>
+      </div>
+    </section>
 
-  <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-    <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src="images/ships.png" alt="clean-usnob" width="160" height="160">
-      </td>
-      <td width="75%" valign="middle">
-        <a href="https://huggingface.co/spaces/competitions/ship-detection">
-          <span class="papertitle">Detecting Ships in Ports to Avoid Congestion and Manage Traffic</span>
-        </a>
-        <br>
-        <em>HuggingFace Competition</em>, 2023
-        <p>Exhausted Yolov5, v7 and v8 and push the mAP to 0.59. Learned at the end of the competition that all I needed to do is train and eval on evenly splitted images, so that object detection model can look at the images in a zoomed-in fashion.</p>
-      </td>
-    </tr>
-  </tbody></table>
+    <!-- ── Publications ── -->
+    <section id="publications">
+      <h2>Publications</h2>
 
-  <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-    <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src="images/bees.jpg" alt="clean-usnob" width="160" height="160">
-      </td>
-      <td width="75%" valign="middle">
-        <a href="https://github.com/mnauf/Bees-ML-Challenge/tree/master">
-          <span class="papertitle">Bees Detection</span>
-        </a>
-        <br>
-        <!-- <em>HuggingFace Competition</em>, 2023 -->
-        <p>The dataset comes with Bees images and equal set of black images with white dots. White dots represent the centroid of the bees. I extracted their location in the image and assume any constant width and height of the bounding box while making sure the bounding box doesn't go out of the image. Once we have the GT in the format yolo expects, I trained a Yolov5.</p>
-      </td>
-    </tr>
-  </tbody></table>
+      <!-- Multilingual LLMs -->
+      <div class="pub-card">
+        <div class="pub-thumb">
+          <div class="pub-thumb-placeholder">🧠</div>
+        </div>
+        <div class="pub-content">
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2602.08625">Do Multilingual LLMs have specialized language heads?</a>
+          </div>
+          <div class="pub-authors"><strong>Muhammad Naufil</strong></div>
+          <div class="pub-meta">
+            <span class="tag tag-venue">arXiv 2026</span>
+            <span class="tag tag-nlp">Multilingual LLMs</span>
+            <span class="tag tag-ai">Mechanistic Interpretability</span>
+          </div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://arxiv.org/abs/2602.08625">arXiv</a>
+          </div>
+        </div>
+      </div>
 
-  <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-    <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src="images/redditGPT.jpg" alt="clean-usnob" width="160" height="160">
-      </td>
-      <td width="75%" valign="middle">
-        <a href="https://huggingface.co/spaces/mnauf/redditGPT">
-          <span class="papertitle">RedditGPT</span>
-        </a>
-        <br>
-        <p>Finetuned GPT2 on the recent public anonymous conversations from Reddit to capture the genuine public sentiment regarding the recent unfolding events in Pakistan since last year. Hosted project link here. Since this runs on CPU on huggingface free hosting, it takes about 500 seconds to respond. Alternatively, you can also run it on your GPU-enabled PC.</p>
-      </td>
-    </tr>
-  </tbody></table>
+      <!-- WACV -->
+      <div class="pub-card">
+        <div class="pub-thumb">
+          <img src="images/permutation.jpg" alt="Permutation-Aware Action Segmentation">
+        </div>
+        <div class="pub-content">
+          <div class="pub-title">
+            <a href="https://retrocausal.ai/rp-5-permutation-aware-action-segmentation-via-unsupervised-frame-to-segment-alignment/">Permutation-Aware Action Segmentation via Unsupervised Frame-to-Segment Alignment</a>
+          </div>
+          <div class="pub-authors">
+            <a href="https://scholar.google.com.au/citations?user=8JbK0V8AAAAJ&hl=en">Quoc-Huy Tran</a>,
+            <a href="https://pk.linkedin.com/in/ahmedrazamehmood">Ahmed Raza Mehmood</a>,
+            <a href="https://pk.linkedin.com/in/muhammad4hmed">Muhammad Ahmed</a>,
+            <strong>Muhammad Naufil</strong>,
+            <a href="https://pk.linkedin.com/in/anas-zafar/">Anas Zafar</a>,
+            <a href="https://www.linkedin.com/in/andreykonin">Andrey Konin</a>,
+            <a href="https://scholar.google.com/citations?user=xE_pSDAAAAAJ&hl=en">Zeeshan Zia</a>
+          </div>
+          <div class="pub-meta">
+            <span class="tag tag-venue">WACV 2024</span>
+            <span class="tag tag-cv">Action Segmentation</span>
+          </div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://arxiv.org/pdf/2305.19478">arXiv</a>
+            <a class="pub-link" href="https://www.youtube.com/watch?v=ZgvbwD3h-fc">Video</a>
+          </div>
+        </div>
+      </div>
 
-  <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-    <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <img src="images/gpt2.png" alt="clean-usnob" width="160" height="160">
-      </td>
-      <td width="75%" valign="middle">
-        <a href="https://github.com/mnauf/GPT-from-scratch">
-          <span class="papertitle">GPT2 from Scratch</span>
-        </a>
-        <br>
-        <p>Add fundamental building blocks to the transformer decoder one by one and observe the resulting impact with each training. Trained 2 models. One of them on a Shakespeare dataset, and other on a small subset of OpenWebText.</p>
-      </td>
-    </tr>
-  </tbody></table>
+      <!-- ICRA -->
+      <div class="pub-card">
+        <div class="pub-thumb">
+          <img src="images/action_segmentation.png" alt="Action Segmentation Using 2D Skeleton Heatmaps">
+        </div>
+        <div class="pub-content">
+          <div class="pub-title">
+            <a href="https://retrocausal.ai/action-segmentation-using-2d-skeleton-heatmaps/">Action Segmentation Using 2D Skeleton Heatmaps</a>
+          </div>
+          <div class="pub-authors">
+            <a href="https://pk.linkedin.com/in/syedwaleedhyder">Syed Waleed Haider</a>,
+            <a href="https://pk.linkedin.com/in/muhammad-usama-630722206">Muhammad Usama</a>,
+            <a href="https://pk.linkedin.com/in/anas-zafar/">Anas Zafar</a>,
+            <strong>Muhammad Naufil</strong>,
+            <a href="https://www.linkedin.com/in/andreykonin">Andrey Konin</a>,
+            <a href="https://scholar.google.com/citations?user=xE_pSDAAAAAJ&hl=en">Zeeshan Zia</a>,
+            <a href="https://scholar.google.com.au/citations?user=8JbK0V8AAAAJ&hl=en">Quoc-Huy Tran</a>
+          </div>
+          <div class="pub-meta">
+            <span class="tag tag-venue">ICRA 2024</span>
+            <span class="tag tag-cv">Pose Estimation · Robotics</span>
+          </div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://arxiv.org/pdf/2309.06462.pdf">arXiv</a>
+          </div>
+        </div>
+      </div>
 
-  </body>
+      <!-- ISMAR -->
+      <div class="pub-card">
+        <div class="pub-thumb">
+          <img src="images/ismar.jpg" alt="AI-mediated Job Status Tracking">
+        </div>
+        <div class="pub-content">
+          <div class="pub-title">
+            <a href="https://ieeexplore.ieee.org/document/9974204">AI-mediated Job Status Tracking in AR as a No-Code service</a>
+          </div>
+          <div class="pub-authors">
+            <a href="https://www.linkedin.com/in/andreykonin">Andrey Konin</a>,
+            <a href="https://pk.linkedin.com/in/shakeebsiddiqui">Shakeeb Siddiqui</a>,
+            <a href="https://pk.linkedin.com/in/hasan-gilani">Hasan Gilani</a>,
+            <a href="https://pk.linkedin.com/in/muhammad-mudassir-7024391ab">Muhammad Mudassir</a>,
+            <a href="https://pk.linkedin.com/in/hassan11196">Hassan Ahmed</a>,
+            <a href="https://www.linkedin.com/in/tabanshaukat/">Taban Shaukat</a>,
+            <strong>Muhammad Naufil</strong>,
+            <a href="https://scholar.google.com.pk/citations?user=NaF7zqYAAAAJ&hl=en">Awais Ahmed</a>,
+            <a href="https://scholar.google.com.au/citations?user=8JbK0V8AAAAJ&hl=en">Quoc-Huy Tran</a>,
+            <a href="https://scholar.google.com/citations?user=xE_pSDAAAAAJ&hl=en">Zeeshan Zia</a>
+          </div>
+          <div class="pub-meta">
+            <span class="tag tag-venue">ISMAR 2022</span>
+            <span class="tag tag-cv">AR · Computer Vision</span>
+          </div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://ieeexplore.ieee.org/document/9974204">IEEE</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </div>
+
+  <footer>
+    <div class="container">
+      Muhammad Naufil &nbsp;·&nbsp; <a href="mailto:m.naufil1@gmail.com">m.naufil1@gmail.com</a>
+    </div>
+  </footer>
+
+</body>
 </html>
