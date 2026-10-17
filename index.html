@@ -1400,13 +1400,16 @@
 
         <!-- AI Companion (RAG + Vision) -->
         <div class="project-card">
-          <div class="project-icon">👁️</div>
+          <video class="project-video" controls playsinline preload="none" poster="images/ai_companion.jpg">
+            <source src="images/ai_companion.mp4" type="video/mp4">
+          </video>
           <div class="project-title"><a href="https://youtu.be/eWvHvg3ZD20">Personal AI Companion</a></div>
-          <p class="project-desc">LLM-powered companion with a pair of eyes to perceive the world around you. Uses RAG retrieval (Pinecone) to recall past conversations like a true friend, and function calling to take actions. Token-efficient by design. It only processes camera images when it deems necessary, which keeps costs low.</p>
+          <p class="project-desc">Hindi/Urdu voice assistant that can see through your camera, built during Uplift AI's HackWeek. It uses function calling to understand what the camera sees and RAG (Pinecone) to remember past conversations. It only calls GPT-4 when a request involves visual input, and the base model handles everything else to keep token costs low.</p>
           <div class="project-tags">
             <span class="tag tag-nlp">RAG</span>
             <span class="tag tag-ai">Function Calling</span>
             <span class="tag tag-cv">Vision</span>
+            <span class="tag tag-prod">Hackathon</span>
           </div>
         </div>
 
