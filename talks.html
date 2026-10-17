@@ -42,6 +42,7 @@
         text-decoration: none; transition: color 0.15s, background 0.15s;
       }
       .nav-links a:hover, .nav-links a.active { color: #111827; background: #f9fafb; }
+      .nav-short { display: none; }
 
       /* Content */
       .container {
@@ -102,9 +103,32 @@
       @media (max-width: 700px) {
         .talk-row { flex-direction: column; }
         .talk-media { flex: none; width: 100%; }
-        .talk-media iframe { width: 100%; }
+        .talk-media iframe { width: 100%; height: auto; aspect-ratio: 2 / 1; }
         .talk-media img { width: 100%; }
         .video-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+
+      @media (max-width: 640px) {
+        .container, .nav-inner { padding: 0 16px; }
+        .nav-inner { gap: 10px; height: 52px; }
+        .nav-name { flex-shrink: 0; font-size: 16px; }
+        .nav-full, .nav-home { display: none; }
+        .nav-short { display: inline; }
+        .nav-links { gap: 2px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+        .nav-links::-webkit-scrollbar { display: none; }
+        .nav-links a { padding: 8px 9px; white-space: nowrap; }
+        h2 { font-size: 20px; margin: 36px 0 18px; }
+        .talk-row { gap: 14px; }
+      }
+
+      @media (max-width: 420px) {
+        .video-grid { grid-template-columns: 1fr; }
+      }
+
+      @media (max-width: 359px) {
+        .nav-name { display: none; }
+        .nav-links { margin: 0 auto; }
+        .nav-links a { padding: 8px 7px; }
       }
     </style>
   </head>
@@ -112,12 +136,12 @@
   <body>
     <nav>
       <div class="nav-inner">
-        <a class="nav-name" href="index.html">Muhammad Naufil</a>
+        <a class="nav-name" href="index.html"><span class="nav-full">Muhammad Naufil</span><span class="nav-short">MN</span></a>
         <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="index.html#experience">Experience</a>
+          <a class="nav-home" href="index.html">Home</a>
+          <a href="index.html#experience"><span class="nav-full">Experience</span><span class="nav-short">Work</span></a>
           <a href="index.html#projects">Projects</a>
-          <a href="index.html#publications">Publications</a>
+          <a href="index.html#publications"><span class="nav-full">Publications</span><span class="nav-short">Papers</span></a>
           <a href="talks.html" class="active">Talks</a>
         </div>
       </div>
