@@ -329,6 +329,16 @@
       margin-bottom: 12px;
     }
 
+    .project-video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      margin-bottom: 14px;
+      border-radius: 8px;
+      background: #000;
+      object-fit: cover;
+    }
+
     .project-title {
       font-size: 16px;
       font-weight: 700;
@@ -1402,7 +1412,9 @@
 
         <!-- Self-Driving Car -->
         <div class="project-card">
-          <div class="project-icon">🚗</div>
+          <video class="project-video" controls playsinline preload="none" poster="images/fyp_selfdriving.jpg">
+            <source src="images/fyp_selfdriving.mp4" type="video/mp4">
+          </video>
           <div class="project-title"><a href="https://github.com/mnauf/self-driving-car-fyp">Autonomous Car (FYP)</a></div>
           <p class="project-desc">Predicts steering angle, detects objects, and classifies traffic lights at 4 FPS on a Jetson Nano. Bachelor thesis at NED University, 2020.</p>
           <div class="project-tags">
