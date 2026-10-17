@@ -8,7 +8,7 @@
   <meta name="description" content="Muhammad Naufil — AI Engineer working on computer vision, LLMs, and agentic AI systems.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fredoka:wght@600&family=Caveat:wght@700&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -402,6 +402,444 @@
       line-height: 1.72;
     }
 
+    .work-points {
+      margin: 8px 0 0 18px;
+      font-size: 14.5px;
+      color: #374151;
+      line-height: 1.65;
+    }
+
+    .work-points li { margin-bottom: 5px; padding-left: 2px; }
+    .work-points li::marker { color: var(--accent); }
+
+    .work-thumb.pad img {
+      object-fit: contain;
+      padding: 9px;
+      background: #fff;
+    }
+
+    /* ── Product cards ── */
+    .section-lede {
+      color: var(--text-muted);
+      font-size: 14.5px;
+      margin: -18px 0 24px;
+    }
+
+    .subhead {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 44px 0 16px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--bg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .product-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+
+    .product-visual {
+      position: relative;
+      display: block;
+      height: 176px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .product-visual:hover { text-decoration: none; }
+
+    .product-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 22px 22px;
+    }
+
+    .product-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .product-logo {
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      object-fit: contain;
+    }
+
+    .product-logo.on-dark  { background: #0b0816; padding: 5px; }
+    .product-logo.on-light { background: #fff; padding: 4px; border: 1px solid #e0e7ff; }
+
+    .product-title { font-size: 16px; font-weight: 700; line-height: 1.3; }
+    .product-title a { color: var(--text); }
+    .product-title a:hover { color: var(--accent); text-decoration: none; }
+    .product-kind { font-size: 13px; color: var(--text-muted); }
+
+    .product-stats { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+
+    .stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12.5px;
+      font-weight: 600;
+      background: #ecfdf5;
+      color: #047857;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stat::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .v-caption {
+      position: absolute;
+      left: 12px;
+      bottom: 9px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    @keyframes blink { 50% { opacity: 0.25; } }
+    @keyframes spin  { to { transform: rotate(360deg); } }
+
+    /* 10 Sentences: flashcards + red-pen corrections */
+    .v-10s { background: #fff8ee; color: #1f1b16; }
+    .v-10s .blob { position: absolute; border-radius: 50%; }
+    .v-10s .b1 { width: 92px; height: 92px; left: -34px; top: -30px; background: #fde68a; }
+    .v-10s .b2 { width: 130px; height: 130px; right: -48px; top: -60px; background: #dbeafe; }
+    .v-10s .b3 { width: 64px; height: 64px; right: 40px; bottom: -34px; background: #ccf5e1; }
+
+    .v-10s-stage {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 16px;
+    }
+
+    .flashcard { flex: 0 0 auto; width: 90px; height: 114px; perspective: 600px; }
+
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(.4,.2,.2,1);
+    }
+
+    .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+
+    .flashcard-face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      text-align: center;
+      font-family: 'Fredoka', 'Inter', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.15;
+      background: #fff;
+      border: 2px solid #1f1b16;
+      border-radius: 12px;
+      box-shadow: 0 4px 0 #1f1b16;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .flashcard-face .art { color: #2563eb; font-size: 14px; font-style: italic; }
+    .flashcard-back { transform: rotateY(180deg); background: #eef5ff; color: #2563eb; }
+
+    .worksheet {
+      max-width: 214px;
+      padding: 11px 13px 10px;
+      font-size: 12.5px;
+      line-height: 1.4;
+      background: #fff;
+      border: 2px solid #1f1b16;
+      border-radius: 12px;
+      box-shadow: 0 4px 0 #1f1b16;
+    }
+
+    .ws-label {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8a8172;
+      margin-bottom: 2px;
+    }
+
+    .ws-line { font-weight: 500; line-height: 2.35; }
+    .ws-wrong { position: relative; white-space: nowrap; }
+    .ws-wrong svg { position: absolute; left: -2px; top: 50%; width: calc(100% + 4px); height: 8px; margin-top: -4px; overflow: visible; }
+    .ws-wrong path { stroke-dasharray: 1; stroke-dashoffset: 0; animation: pen-strike 6s ease-out infinite; }
+
+    .ws-fix {
+      position: absolute;
+      left: 6px;
+      top: -15px;
+      font-family: 'Caveat', cursive;
+      font-size: 17px;
+      line-height: 1;
+      color: #e0463a;
+      clip-path: inset(0 0 0 0);
+      animation: pen-write 6s ease-out infinite;
+    }
+
+    .ws-note {
+      margin-top: -2px;
+      font-family: 'Caveat', cursive;
+      font-size: 15px;
+      line-height: 1.1;
+      color: #e0463a;
+      animation: pen-note 6s ease-out infinite;
+    }
+
+    .ws-dots { display: flex; gap: 4px; margin-top: 8px; }
+    .ws-dots i { width: 7px; height: 7px; border-radius: 50%; border: 1.5px solid #1f1b16; }
+    .ws-dots i.on { background: #fbbf24; }
+
+    @keyframes pen-strike {
+      0%, 12%   { stroke-dashoffset: 1; opacity: 1; }
+      26%, 88%  { stroke-dashoffset: 0; opacity: 1; }
+      96%, 100% { stroke-dashoffset: 0; opacity: 0; }
+    }
+
+    @keyframes pen-write {
+      0%, 26%   { clip-path: inset(0 100% 0 0); opacity: 1; }
+      42%, 88%  { clip-path: inset(0 0 0 0); opacity: 1; }
+      96%, 100% { clip-path: inset(0 0 0 0); opacity: 0; }
+    }
+
+    @keyframes pen-note {
+      0%, 44%  { opacity: 0; transform: translateY(3px); }
+      54%, 88% { opacity: 1; transform: none; }
+      96%, 100% { opacity: 0; }
+    }
+
+    /* Batcheet: shortest path through a trust graph */
+    .v-bat {
+      background-color: #07090f;
+      background-image:
+        linear-gradient(rgba(148,163,184,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148,163,184,0.07) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+
+    .v-bat svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .v-bat .v-caption { color: #94a3b8; }
+    .v-bat .v-caption b { color: #f59e0b; font-weight: 600; }
+
+    .bat-seg {
+      fill: none;
+      stroke-width: 2.4;
+      stroke-linecap: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 0;
+      animation: bat-draw 5s ease-in-out infinite;
+    }
+
+    .bat-seg.s2 { animation-delay: 0.45s; }
+    .bat-seg.s3 { animation-delay: 0.9s; }
+    .bat-seg.s4 { animation-delay: 1.35s; }
+
+    @keyframes bat-draw {
+      0%        { stroke-dashoffset: 1; opacity: 1; }
+      14%, 80%  { stroke-dashoffset: 0; opacity: 1; }
+      92%       { stroke-dashoffset: 0; opacity: 0; }
+      100%      { stroke-dashoffset: 1; opacity: 0; }
+    }
+
+    .bat-pulse {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: bat-pulse 2.2s ease-out infinite;
+    }
+
+    @keyframes bat-pulse {
+      0%   { transform: scale(1); opacity: 0.55; }
+      100% { transform: scale(2.6); opacity: 0; }
+    }
+
+    /* LinkInsertion.ai: live outreach pipeline */
+    .v-li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      color: #e9e5ff;
+      background:
+        radial-gradient(120% 90% at 85% 0%, rgba(124,58,237,0.38), transparent 60%),
+        #0b0816;
+    }
+
+    .li-window {
+      width: 100%;
+      max-width: 330px;
+      padding: 8px 10px 10px;
+      background: rgba(20,16,36,0.92);
+      border: 1px solid rgba(167,139,250,0.22);
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    }
+
+    .li-bar { display: flex; align-items: center; gap: 5px; font-size: 10px; color: #8b84a8; margin-bottom: 4px; }
+    .li-bar i { width: 7px; height: 7px; border-radius: 50%; }
+    .li-bar i:nth-child(1) { background: #f87171; }
+    .li-bar i:nth-child(2) { background: #fbbf24; }
+    .li-bar i:nth-child(3) { background: #34d399; }
+    .li-title { flex: 1; text-align: center; }
+    .li-live { color: #34d399; font-weight: 700; letter-spacing: 0.05em; }
+    .li-live::before { content: "● "; animation: blink 1.4s infinite; }
+
+    .li-step {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 4px;
+      padding: 5px 8px;
+      font-size: 11.5px;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 7px;
+      background: rgba(255,255,255,0.025);
+      opacity: 0.45;
+      transition: opacity 0.3s, background 0.3s, border-color 0.3s;
+    }
+
+    .li-step.active { opacity: 1; background: rgba(124,58,237,0.16); border-color: rgba(167,139,250,0.35); }
+    .li-step.done   { opacity: 1; }
+
+    .li-ico {
+      position: relative;
+      flex: 0 0 14px;
+      width: 14px;
+      height: 14px;
+      border: 1.5px solid #4b4466;
+      border-radius: 50%;
+    }
+
+    .li-step.active .li-ico { border-color: #a78bfa; border-right-color: transparent; animation: spin 0.8s linear infinite; }
+    .li-step.done .li-ico   { border-color: #34d399; background: rgba(52,211,153,0.15); }
+
+    .li-step.done .li-ico::after {
+      content: "";
+      position: absolute;
+      left: 3.5px;
+      top: 1px;
+      width: 3px;
+      height: 6px;
+      border: solid #34d399;
+      border-width: 0 1.5px 1.5px 0;
+      transform: rotate(45deg);
+    }
+
+    .li-name { flex: 1; font-weight: 600; }
+
+    .li-badge {
+      padding: 1px 7px;
+      font-size: 10px;
+      font-weight: 700;
+      border-radius: 10px;
+      color: #34d399;
+      background: rgba(52,211,153,0.14);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .li-step.active .li-badge { opacity: 1; color: #c4b5fd; background: rgba(167,139,250,0.18); }
+    .li-step.done .li-badge   { opacity: 1; }
+
+    /* SyncMyTime: live clocks + working-hour overlap */
+    .v-smt {
+      padding: 14px 16px;
+      color: #1e1b4b;
+      background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+    }
+
+    .smt-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #6366f1;
+    }
+
+    .smt-legend { display: flex; gap: 10px; font-weight: 600; color: #6b7280; letter-spacing: 0.02em; text-transform: none; }
+    .smt-legend i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+
+    .smt-row {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      align-items: center;
+      gap: 10px;
+      height: 42px;
+      border-top: 1px solid rgba(99,102,241,0.12);
+    }
+
+    .smt-city { font-size: 11px; color: #4b5563; line-height: 1.25; }
+    .smt-time { font-size: 16px; font-weight: 700; color: #4f46e5; font-variant-numeric: tabular-nums; }
+    .smt-time .colon { animation: blink 1s steps(1) infinite; }
+    .smt-wx { margin-left: 3px; font-size: 11px; font-weight: 500; color: #6b7280; }
+
+    .smt-strip { position: relative; display: grid; grid-template-columns: repeat(24, 1fr); gap: 1.5px; height: 16px; }
+    .smt-strip span { border-radius: 2px; background: #c7d2fe; }
+    .smt-strip span.day  { background: #fff; }
+    .smt-strip span.work { background: #6366f1; }
+
+    .smt-now {
+      position: absolute;
+      top: -5px;
+      bottom: -5px;
+      width: 2px;
+      margin-left: -1px;
+      border-radius: 1px;
+      background: #ef4444;
+      box-shadow: 0 0 0 2px rgba(239,68,68,0.18);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .product-visual *, .product-visual *::before, .product-visual *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
     /* ── Card color accents ── */
     .pub-card   { border-left-width: 4px; }
     .work-card  { border-left-width: 4px; }
@@ -414,12 +852,16 @@
     #publications > .pub-card:nth-child(5) { border-left-color: #10b981; }
 
     /* Experience */
-    #experience > .work-card:nth-child(2) { border-left-color: #f43f5e; }
-    #experience > .work-card:nth-child(3) { border-left-color: #6366f1; }
-    #experience > .work-card:nth-child(4) { border-left-color: #f59e0b; }
-    #experience > .work-card:nth-child(5) { border-left-color: #3b82f6; }
-    #experience > .work-card:nth-child(6) { border-left-color: #22c55e; }
-    #experience > .work-card:nth-child(7) { border-left-color: #a855f7; }
+    #experience > .work-card:nth-child(2)  { border-left-color: #64748b; }
+    #experience > .work-card:nth-child(3)  { border-left-color: #1e40af; }
+    #experience > .work-card:nth-child(4)  { border-left-color: #14b8a6; }
+    #experience > .work-card:nth-child(5)  { border-left-color: #f43f5e; }
+    #experience > .work-card:nth-child(6)  { border-left-color: #6366f1; }
+    #experience > .work-card:nth-child(7)  { border-left-color: #f59e0b; }
+    #experience > .work-card:nth-child(8)  { border-left-color: #10b981; }
+    #experience > .work-card:nth-child(9)  { border-left-color: #3b82f6; }
+    #experience > .work-card:nth-child(10) { border-left-color: #22c55e; }
+    #experience > .work-card:nth-child(11) { border-left-color: #a855f7; }
 
     /* Projects */
     .project-grid > .project-card:nth-child(1) { border-left-color: #2563eb; }
@@ -455,7 +897,13 @@
 
     [data-theme="dark"] .hero-bio p,
     [data-theme="dark"] .work-desc,
+    [data-theme="dark"] .work-points,
     [data-theme="dark"] .project-desc { color: #c4b8e8; }
+
+    [data-theme="dark"] .stat { background: rgba(16,185,129,0.14); color: #6ee7b7; }
+    [data-theme="dark"] .product-logo.on-light { border-color: transparent; }
+    [data-theme="dark"] .v-10s,
+    [data-theme="dark"] .v-smt { filter: brightness(0.92); }
 
     [data-theme="dark"] .hero-link {
       background: rgba(167,139,250,0.07);
@@ -481,7 +929,8 @@
     /* Violet glow hover on all cards */
     [data-theme="dark"] .pub-card:hover,
     [data-theme="dark"] .work-card:hover,
-    [data-theme="dark"] .project-card:hover {
+    [data-theme="dark"] .project-card:hover,
+    [data-theme="dark"] .product-card:hover {
       border-top-color: rgba(167,139,250,0.4);
       border-right-color: rgba(167,139,250,0.4);
       border-bottom-color: rgba(167,139,250,0.4);
@@ -496,7 +945,8 @@
     /* Dark card base */
     [data-theme="dark"] .pub-card,
     [data-theme="dark"] .work-card,
-    [data-theme="dark"] .project-card {
+    [data-theme="dark"] .project-card,
+    [data-theme="dark"] .product-card {
       background: #15122a;
       border-color: rgba(139,92,246,0.18);
     }
@@ -554,6 +1004,10 @@
       h1.name { font-size: 30px; }
       .project-grid { grid-template-columns: 1fr; }
       .project-card.featured { grid-column: span 1; }
+      .product-grid { grid-template-columns: 1fr; }
+      .v-10s-stage { gap: 14px; padding: 0 12px; }
+      .work-card { gap: 16px; padding: 20px 18px; }
+      .work-thumb { flex-basis: 56px; width: 56px; height: 56px; }
       .pub-card { flex-direction: column; }
       .pub-thumb { width: 100%; height: 140px; }
       .nav-links a { padding: 6px 8px; font-size: 13px; }
@@ -584,9 +1038,9 @@
         <h1 class="name">Muhammad Naufil</h1>
         <p class="hero-subtitle">AI Engineer &nbsp;·&nbsp; MS CS @ Saarland University</p>
         <div class="hero-bio">
-          <p>I build AI systems at the intersection of <span class="hl-blue">computer vision</span>, <span class="hl-purple">LLMs</span>, and <span class="hl-green">agentic workflows</span>. Currently pursuing an MS in Computer Science at <strong>Saarland University</strong>.</p>
-          <p>Previously a Computer Vision Working Student at <a href="https://cispa.de">CISPA</a> on <span class="hl-pink">deepfake detection</span> — finetuning vision foundation models at scale on clusters of 8×A100 GPUs. Also a HiWi at <a href="https://www.mpi-inf.mpg.de">MPI Informatics</a> on co-speech gesture synthesis using <span class="hl-purple">latent diffusion models</span>, a Computer Vision Engineer at <a href="https://retrocausal.ai">Retrocausal</a> (Redmond, WA) for 3+ years building <span class="hl-blue">markerless MoCap</span> and action segmentation systems deployed at Ford, Honda, and Nissan, and a Research Assistant at <a href="https://zema.de/">Zema</a> exploring <span class="hl-green">RAG</span> and AI agent frameworks.</p>
-          <p>On the side I build <span class="hl-green">agentic AI products</span> — including an end-to-end blogger outreach tool powered by Openclaw, and an LLM companion with <span class="hl-blue">vision</span> and <span class="hl-purple">persistent memory</span>.</p>
+          <p>I build AI systems at the intersection of <span class="hl-blue">computer vision</span>, <span class="hl-purple">LLMs</span>, and <span class="hl-green">agentic workflows</span>. Currently a Werkstudent at <strong>Mercedes-Benz</strong>, turning camera and LiDAR recordings into ML-ready datasets for <span class="hl-blue">autonomous driving</span>, and a Research Assistant at <strong>Saarland University</strong>, where I'm pursuing an MS in Computer Science. My Master thesis at <a href="https://www.mpi-inf.mpg.de">MPI Informatics</a> is on <span class="hl-purple">group co-speech gesture synthesis</span> with latent diffusion.</p>
+          <p>Previously a Computer Vision Working Student at <a href="https://cispa.de">CISPA</a> startup Detesia on <span class="hl-pink">deepfake detection</span> — finetuning vision foundation models at scale on clusters of 8×A100 GPUs. Also founding engineer at Gordian Robotics on one-shot retail shelf monitoring, a HiWi at MPI Informatics on diffusion models for gesture generation, a Research Assistant at <a href="https://zema.de/">Zema</a> exploring <span class="hl-green">RAG</span> and AI agent frameworks, and a Computer Vision Engineer at <a href="https://retrocausal.ai">Retrocausal</a> (Redmond, WA) for 3+ years building <span class="hl-blue">markerless MoCap</span> (a $150K/yr Siemens contract) and action segmentation piloted with Honda, Suzuki, and Nissan.</p>
+          <p>On the side I ship my own products: <a href="https://10sentences.com">10 Sentences</a>, a German learning platform with <span class="hl-yellow">100+ users</span>; <a href="https://batcheet.com">Batcheet</a>, a <span class="hl-yellow">30K+ node</span> trust graph for referral hiring; <a href="https://linkinsertion.ai">LinkInsertion.ai</a>, an <span class="hl-green">agentic</span> outreach tool with paying customers; and <a href="https://www.syncmytime.com">SyncMyTime</a>, a time and weather database for remote teams.</p>
         </div>
         <div class="hero-links">
           <a class="hero-link" href="mailto:m.naufil1@gmail.com">
@@ -618,6 +1072,46 @@
     <section id="experience">
       <h2>Work Experience</h2>
 
+      <!-- Mercedes-Benz -->
+      <div class="work-card">
+        <div class="work-thumb pad">
+          <img src="images/mercedes.svg" alt="Mercedes-Benz">
+        </div>
+        <div class="work-content">
+          <div class="work-title">Werkstudent — Autonomous Driving Data</div>
+          <div class="work-org">Mercedes-Benz &nbsp;|&nbsp; Stuttgart &nbsp;·&nbsp; Aug 2026 – Present</div>
+          <p class="work-desc">Developing data processing pipelines that transform raw camera and LiDAR ROS bag recordings into structured, ML-ready datasets for training autonomous driving models.</p>
+        </div>
+      </div>
+
+      <!-- Saarland University -->
+      <div class="work-card">
+        <div class="work-thumb">
+          <img src="images/saarland.png" alt="Saarland University">
+        </div>
+        <div class="work-content">
+          <div class="work-title">Research Assistant — Sign Language &amp; Co-Speech Gestures</div>
+          <div class="work-org">Saarland University &nbsp;|&nbsp; Saarbrücken &nbsp;·&nbsp; Jul 2026 – Present</div>
+          <p class="work-desc">Researching how sign language and co-speech gestures can be understood through phonemes, the smallest building blocks of a gesture.</p>
+        </div>
+      </div>
+
+      <!-- MPI Informatics: Master thesis -->
+      <div class="work-card">
+        <div class="work-thumb">
+          <img src="mpi.jpeg" alt="MPI Informatics">
+        </div>
+        <div class="work-content">
+          <div class="work-title"><a href="https://www.mpi-inf.mpg.de">Master Thesis — Group Co-Speech Gesture Synthesis</a></div>
+          <div class="work-org">MPI Informatics &nbsp;|&nbsp; Saarbrücken &nbsp;·&nbsp; MS Computer Science, Saarland University</div>
+          <ul class="work-points">
+            <li>Built a speech- and text-conditioned 3D gesture generation model with <strong>latent diffusion</strong>: a Transformer (DiT) denoises in latent space, conditioned on T5 text and mel-spectrogram audio features via cross-attention.</li>
+            <li>Generates full-body SMPL-X motion (body, fingers, locomotion) at scale on the BEAT2, Embody3D and DnD datasets.</li>
+            <li>Research questions: making characters spatially and socially aware, preventing collisions while keeping positions and orientations right for mutual gaze, encoding multi-participant speech cheaply, and scaling to any number of participants.</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- Detesia / CISPA -->
       <div class="work-card">
         <div class="work-thumb">
@@ -626,7 +1120,11 @@
         <div class="work-content">
           <div class="work-title">Computer Vision Working Student — Deepfake Detection</div>
           <div class="work-org">Detesia &nbsp;|&nbsp; CISPA Startup &nbsp;·&nbsp; Oct 2024 – Dec 2025</div>
-          <p class="work-desc">Finetuned vision foundation models on a large-scale collection of deepfakes using clusters of 8×A100 GPUs. Conducted large-scale generation of synthetic deepfake datasets to expand training coverage and improve detection robustness.</p>
+          <ul class="work-points">
+            <li>Finetuned vision foundation models on a large-scale collection of deepfakes using clusters of 8×A100 GPUs.</li>
+            <li>Generated deepfakes at scale with state-of-the-art open- and closed-source generative models to expand training coverage.</li>
+            <li>Found that every generative model leaves a very different feature distribution, so the detector has to be finetuned for each new generator to learn its unique fingerprint.</li>
+          </ul>
         </div>
       </div>
 
@@ -654,6 +1152,36 @@
         </div>
       </div>
 
+      <!-- Gordian Robotics -->
+      <div class="work-card">
+        <div class="work-thumb">
+          <div class="pub-thumb-placeholder">🛒</div>
+        </div>
+        <div class="work-content">
+          <div class="work-title">Founding Engineer — Retail AI</div>
+          <div class="work-org">Gordian Robotics &nbsp;|&nbsp; Remote &nbsp;·&nbsp; Apr – Jun 2024</div>
+          <p class="work-desc">Developed a one-shot computer vision system for retail shelf monitoring. Evaluated SuperGlue and LightGlue feature matching to recognize products from a single reference image and detect out-of-stock items — with no retraining when packaging changes.</p>
+        </div>
+      </div>
+
+      <!-- Retrocausal: Monocular Camera MoCap -->
+      <div class="work-card">
+        <div class="work-thumb">
+          <img src="images/ergo_sketch.png" alt="Monocular Camera MoCap System">
+        </div>
+        <div class="work-content">
+          <div class="work-title"><a href="https://retrocausal.ai/ergonomic-safety/">Monocular Camera MoCap System</a></div>
+          <div class="work-org">Retrocausal, Inc. &nbsp;|&nbsp; Redmond, WA &nbsp;·&nbsp; Nov 2020 – Mar 2024</div>
+          <p class="work-desc">Markerless 3D motion capture from ordinary phone cameras for ergonomic safety analytics on the factory floor.</p>
+          <ul class="work-points">
+            <li>Built the MoCap product with a single colleague, winning a <strong>$150K/year contract with Siemens</strong>, and landed <strong>3M</strong> as the company's first customer.</li>
+            <li>Experimented with monocular and multi-view approaches to extract 3D joint locations of workers; tackled monocular ambiguity with limb-length constraints and temporal smoothing.</li>
+            <li>Extended an open-source monocular synthetic 3D motion pipeline to multi-view in Blender (camera intrinsics, extrinsics, world and camera coordinates), and synthesized human motion in an anthropomorphic simulation for detailed ergonomics studies.</li>
+            <li>Built a mini MoCap system from two RGB-D cameras with confidence-based fusion.</li>
+          </ul>
+        </div>
+      </div>
+
       <!-- Retrocausal: Manual Assembly Copilot -->
       <div class="work-card">
         <div class="work-thumb">
@@ -661,8 +1189,13 @@
         </div>
         <div class="work-content">
           <div class="work-title"><a href="https://retrocausal.ai/live-worker-guidance/">Live Worker Guidance</a></div>
-          <div class="work-org">Retrocausal, Inc. &nbsp;|&nbsp; Redmond, WA &nbsp;·&nbsp; Nov 2020 – Mar 2024</div>
-          <p class="work-desc">Empower your operators, engineers, and managers to dramatically boost the quality and productivity of your manual processes. Create digital mistake-proofing mechanisms for a variety of assembly and packing processes. Pathfinder tracks individual steps of an assembly process, and offers audible and visual alerts to help associates avoid mistakes.</p>
+          <div class="work-org">Retrocausal</div>
+          <p class="work-desc">Digital mistake-proofing for manual assembly: tracks each step of a process and alerts associates with audible and visual cues before a mistake ships.</p>
+          <ul class="work-points">
+            <li>Cut purchasing price by <strong>150×</strong> and deployment time by <strong>180×</strong> for a discrete manufacturing customer by replacing their sensor and visual inspection setup with a human action recognition model on Jetson Xavier / AGX.</li>
+            <li>Built the human activity segmentation demo for the SBIR grant from <strong>NASA's Human Research Program</strong>.</li>
+            <li>Benchmarked video understanding models (3D CNN, I3D) against plain object detection (YOLO) and found the simpler detector wins at recognizing assembly steps on the factory floor.</li>
+          </ul>
         </div>
       </div>
 
@@ -674,19 +1207,11 @@
         <div class="work-content">
           <div class="work-title"><a href="https://retrocausal.ai/video-traceability-analytics/">Guidance, Analytics &amp; Trace</a></div>
           <div class="work-org">Retrocausal</div>
-          <p class="work-desc">Collects timing data for every cycle performed on a line, at a fine-grained level. It identifies non-value add work as well as most efficiently performed cycles. These capabilities directly aid industrial engineers in improving processes. Additionally, Pathfinder grades individual assembly sessions, versus ideal number of cycles that could have been performed and considering operator mistakes. This further helps engineers compare and contrast different sessions and work styles to rapidly improve processes.</p>
-        </div>
-      </div>
-
-      <!-- Retrocausal: Monocular Camera MoCap -->
-      <div class="work-card">
-        <div class="work-thumb">
-          <img src="images/ergo_sketch.png" alt="Monocular Camera MoCap System">
-        </div>
-        <div class="work-content">
-          <div class="work-title"><a href="https://retrocausal.ai/ergonomic-safety/">Monocular Camera MoCap System</a></div>
-          <div class="work-org">Retrocausal</div>
-          <p class="work-desc">Computer vision based "in-process" health and safety analytics. Analyzes videos recorded from ordinary phone cameras via a mobile app or web portal upload. Uses state-of-the-art computer vision technology to compute 3D skeletal poses and extract 3D joint angles, optimized for industrial use cases with robustness to partial obfuscation and extreme postures. Has significant advantages over wearables, goniometers, or Marker-Based Motion Capture Systems.</p>
+          <p class="work-desc">Fine-grained timing for every cycle on a line: flags non-value-add work, surfaces the most efficient cycles, and grades each session so industrial engineers can improve processes fast.</p>
+          <ul class="work-points">
+            <li>Wrote the algorithm behind automated time-and-motion studies, giving step-level analytics for discrete manufacturing assembly.</li>
+            <li>Ran pilot projects with <strong>Honda, Suzuki and Nissan</strong> — from supervising the data collection and annotation team to iteratively adapting models to diverse factory floors.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -694,19 +1219,174 @@
     <!-- ── Projects ── -->
     <section id="projects">
       <h2>Personal Projects</h2>
-      <div class="project-grid">
+      <p class="section-lede">Products I've designed, built and shipped on my own — live, with real users.</p>
+      <div class="product-grid">
 
-        <!-- LinkInsertion.ai — featured -->
-        <div class="project-card featured">
-          <img src="linkinsertion.jpg" alt="LinkInsertion.ai logo" style="width:56px;height:56px;border-radius:12px;object-fit:cover;margin-bottom:12px;">
-          <div class="project-title"><a href="https://linkinsertion.ai">LinkInsertion.ai</a></div>
-          <p class="project-desc">Agentic AI tool for blogger outreach, built with Openclaw (formerly ClawdCode). A single click triggers the full pipeline: crawls the web to find relevant articles, mines editor contact emails, writes personalized outreach emails tailored to each article, and sends them — complete end-to-end automation of the link insertion workflow.</p>
-          <div class="project-tags">
-            <span class="tag tag-ai">Agentic AI</span>
-            <span class="tag tag-nlp">Openclaw</span>
-            <span class="tag tag-prod">Production</span>
+        <!-- 10 Sentences -->
+        <article class="product-card">
+          <a class="product-visual v-10s" href="https://10sentences.com" tabindex="-1" aria-hidden="true">
+            <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+            <div class="v-10s-stage">
+              <div class="flashcard" id="flashcard">
+                <div class="flashcard-inner">
+                  <div class="flashcard-face flashcard-front"><span class="art">der</span><span class="word">Abend</span></div>
+                  <div class="flashcard-face flashcard-back"><span class="meaning">evening</span></div>
+                </div>
+              </div>
+              <div class="worksheet">
+                <div class="ws-label">Sentence 3 / 10 · lernen</div>
+                <div class="ws-line">Ich habe gestern Deutsch <span class="ws-wrong">gelernen<svg viewBox="0 0 100 8" preserveAspectRatio="none"><path d="M1 5 Q 30 1 55 4 T 99 3" pathLength="1" fill="none" stroke="#e0463a" stroke-width="2.2" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg><span class="ws-fix">gelernt</span></span>.</div>
+                <div class="ws-note">Partizip II: ge‑lern‑t ✓</div>
+                <div class="ws-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </a>
+          <div class="product-body">
+            <div class="product-head">
+              <img class="product-logo" src="images/10sentences.svg" alt="10 Sentences logo">
+              <div>
+                <div class="product-title"><a href="https://10sentences.com">10 Sentences</a></div>
+                <div class="product-kind">German language learning platform</div>
+              </div>
+            </div>
+            <div class="product-stats">
+              <span class="stat">100+ users</span>
+            </div>
+            <p class="project-desc">Takes learners from zero to actually <em>using</em> German words. Flashcards cover 3,477 B1 words, each playable in real YouTube clips; then you write 10 sentences per verb and an LLM marks every mistake in red pen and explains it.</p>
+            <div class="project-tags">
+              <span class="tag tag-nlp">LLM Feedback</span>
+              <span class="tag tag-ai">Next.js</span>
+              <span class="tag tag-prod">EdTech</span>
+            </div>
           </div>
-        </div>
+        </article>
+
+        <!-- Batcheet -->
+        <article class="product-card">
+          <a class="product-visual v-bat" href="https://batcheet.com" tabindex="-1" aria-hidden="true">
+            <svg id="bat-graph" viewBox="0 0 420 176" preserveAspectRatio="xMidYMid meet" font-family="Inter, sans-serif">
+              <g stroke="#2b3445" stroke-width="1.2">
+                <line x1="92" y1="112" x2="46" y2="62"/><line x1="92" y1="112" x2="40" y2="140"/><line x1="92" y1="112" x2="120" y2="152"/>
+                <line x1="46" y1="62" x2="110" y2="28"/><line x1="110" y1="28" x2="150" y2="72"/><line x1="150" y1="72" x2="196" y2="32"/>
+                <line x1="196" y1="32" x2="252" y2="22"/><line x1="252" y1="22" x2="292" y2="58"/><line x1="222" y1="96" x2="186" y2="142"/>
+                <line x1="186" y1="142" x2="120" y2="152"/><line x1="222" y1="96" x2="262" y2="148"/><line x1="262" y1="148" x2="330" y2="150"/>
+                <line x1="330" y1="150" x2="352" y2="97"/><line x1="352" y1="97" x2="392" y2="138"/><line x1="292" y1="58" x2="388" y2="34"/>
+                <line x1="40" y1="140" x2="120" y2="152"/>
+              </g>
+              <path class="bat-seg s1" pathLength="1" stroke="#3b82f6" d="M92 112 L150 72"/>
+              <path class="bat-seg s2" pathLength="1" stroke="#10b981" d="M150 72 L222 96"/>
+              <path class="bat-seg s3" pathLength="1" stroke="#f59e0b" d="M222 96 L292 58"/>
+              <path class="bat-seg s4" pathLength="1" stroke="#ef5350" d="M292 58 L352 97"/>
+              <g fill="#3b4558">
+                <circle cx="46" cy="62" r="4"/><circle cx="40" cy="140" r="4"/><circle cx="120" cy="152" r="4"/><circle cx="110" cy="28" r="3.5"/>
+                <circle cx="196" cy="32" r="4"/><circle cx="252" cy="22" r="3.5"/><circle cx="186" cy="142" r="4"/><circle cx="262" cy="148" r="4"/>
+                <circle cx="330" cy="150" r="3.5"/><circle cx="392" cy="138" r="4"/><circle cx="388" cy="34" r="3.5"/>
+              </g>
+              <circle cx="150" cy="72" r="5.5" fill="#3b82f6"/>
+              <circle cx="222" cy="96" r="5.5" fill="#10b981"/>
+              <circle cx="292" cy="58" r="5.5" fill="#f59e0b"/>
+              <circle class="bat-pulse" cx="92" cy="112" r="9" fill="#3b82f6"/>
+              <circle cx="92" cy="112" r="8" fill="#0b1220" stroke="#3b82f6" stroke-width="2.5"/>
+              <circle cx="92" cy="112" r="4" fill="#fff"/>
+              <circle class="bat-pulse" cx="352" cy="82" r="7" fill="#ef5350" style="animation-delay:1.1s"/>
+              <path d="M346.4 86 L357.6 86 L352 97 Z" fill="#ef5350"/>
+              <circle cx="352" cy="82" r="7.5" fill="#ef5350"/>
+              <circle cx="352" cy="82" r="3" fill="#fff"/>
+              <circle r="3.2" fill="#fff" opacity="0">
+                <animateMotion dur="5s" repeatCount="indefinite" path="M92 112 L150 72 L222 96 L292 58 L352 97" keyPoints="0;1;1" keyTimes="0;0.42;1" calcMode="linear"/>
+                <animate attributeName="opacity" dur="5s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;0.42;0.5;1"/>
+              </circle>
+              <text x="92" y="134" fill="#e2e8f0" font-size="9.5" font-weight="600" text-anchor="middle">You</text>
+              <text x="352" y="67" fill="#e2e8f0" font-size="9.5" font-weight="600" text-anchor="middle">Hiring manager</text>
+            </svg>
+            <span class="v-caption">You → hiring manager in <b>4 hops</b></span>
+          </a>
+          <div class="product-body">
+            <div class="product-head">
+              <img class="product-logo" src="images/batcheet.svg" alt="Batcheet logo">
+              <div>
+                <div class="product-title"><a href="https://batcheet.com">Batcheet</a></div>
+                <div class="product-kind">Google Maps for human introductions</div>
+              </div>
+            </div>
+            <div class="product-stats">
+              <span class="stat">30K+ nodes</span>
+            </div>
+            <p class="project-desc">What if everyone's phonebook were connected? Batcheet stitches contacts into one trust graph to test how well <strong>six degrees of separation</strong> really holds — then finds the shortest chain of people to a hiring manager and turns it into a warm referral.</p>
+            <div class="project-tags">
+              <span class="tag tag-cv">Graphs</span>
+              <span class="tag tag-ai">Next.js</span>
+              <span class="tag tag-prod">Referral Hiring</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- LinkInsertion.ai -->
+        <article class="product-card">
+          <a class="product-visual v-li" href="https://linkinsertion.ai" tabindex="-1" aria-hidden="true">
+            <div class="li-window" id="li-pipeline">
+              <div class="li-bar"><i></i><i></i><i></i><span class="li-title">linkinsertion.ai — Pipeline</span><span class="li-live">LIVE</span></div>
+              <div class="li-step"><span class="li-ico"></span><span class="li-name">Article discovery</span><span class="li-badge" data-active="Scanning…" data-done="312 matches"></span></div>
+              <div class="li-step"><span class="li-ico"></span><span class="li-name">Contact discovery</span><span class="li-badge" data-active="Searching…" data-done="289 found"></span></div>
+              <div class="li-step"><span class="li-ico"></span><span class="li-name">AI personalization</span><span class="li-badge" data-active="AI writing…" data-done="289 drafted"></span></div>
+              <div class="li-step"><span class="li-ico"></span><span class="li-name">Send via Gmail</span><span class="li-badge" data-active="Sending…" data-done="289 sent"></span></div>
+            </div>
+          </a>
+          <div class="product-body">
+            <div class="product-head">
+              <img class="product-logo on-dark" src="images/linkinsertion.svg" alt="LinkInsertion.ai logo">
+              <div>
+                <div class="product-title"><a href="https://linkinsertion.ai">LinkInsertion.ai</a></div>
+                <div class="product-kind">Agentic link building for SaaS</div>
+              </div>
+            </div>
+            <div class="product-stats">
+              <span class="stat">$250 revenue</span>
+              <span class="stat">4 paid users</span>
+            </div>
+            <p class="project-desc">Agentic outreach built with Openclaw. One click runs the whole pipeline: finds ranking articles on Google, mines editor contacts, writes a personalized pitch for each article, and sends it with follow-ups from your own Gmail inbox.</p>
+            <div class="project-tags">
+              <span class="tag tag-ai">Agentic AI</span>
+              <span class="tag tag-nlp">Openclaw</span>
+              <span class="tag tag-prod">SaaS</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- SyncMyTime -->
+        <article class="product-card">
+          <a class="product-visual v-smt" href="https://www.syncmytime.com" tabindex="-1" aria-hidden="true">
+            <div class="smt-head">
+              <span>Live · working hours</span>
+              <span class="smt-legend"><span><i style="background:#6366f1"></i>work</span><span><i style="background:#fff"></i>day</span><span><i style="background:#c7d2fe"></i>night</span></span>
+            </div>
+            <div id="smt-rows"></div>
+          </a>
+          <div class="product-body">
+            <div class="product-head">
+              <img class="product-logo on-light" src="images/syncmytime.png" alt="SyncMyTime logo">
+              <div>
+                <div class="product-title"><a href="https://www.syncmytime.com">SyncMyTime</a></div>
+                <div class="product-kind">Time &amp; weather database for remote teams</div>
+              </div>
+            </div>
+            <div class="product-stats">
+              <span class="stat">200 countries</span>
+              <span class="stat">7,000+ cities</span>
+            </div>
+            <p class="project-desc">A database of time and weather for every city, built for remote workers juggling teammates across timezones: live world clock, meeting planner, timezone converter, city-vs-city comparisons and public holiday calendars.</p>
+            <div class="project-tags">
+              <span class="tag tag-ai">React</span>
+              <span class="tag tag-nlp">Programmatic SEO</span>
+              <span class="tag tag-cv">Weather Data</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <h3 class="subhead">ML experiments &amp; earlier projects</h3>
+      <div class="project-grid">
 
         <!-- AI Companion (RAG + Vision) -->
         <div class="project-card">
@@ -918,6 +1598,143 @@
         localStorage.setItem('theme', next);
         btn.textContent = next === 'dark' ? '☀️' : '🌙';
       });
+    })();
+
+    // ── Product card animations ──
+    (function () {
+      var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // 10 Sentences: flip through flashcards, swapping the hidden face mid-cycle
+      var card = document.getElementById('flashcard');
+      if (card && !reduced) {
+        var words = [['der', 'Abend', 'evening'], ['die', 'Zeit', 'time'], ['', 'lernen', 'to learn'], ['das', 'Haus', 'house'], ['die', 'Welt', 'world']];
+        var front = card.querySelector('.flashcard-front');
+        var back  = card.querySelector('.flashcard-back .meaning');
+        var w = 0;
+        setInterval(function () {
+          var flipped = card.classList.toggle('flipped');
+          setTimeout(function () {
+            if (flipped) {
+              w = (w + 1) % words.length;
+              front.querySelector('.art').textContent  = words[w][0];
+              front.querySelector('.word').textContent = words[w][1];
+            } else {
+              back.textContent = words[w][2];
+            }
+          }, 650);
+        }, 2600);
+      }
+
+      // Batcheet: freeze the SMIL dot for reduced motion
+      var graph = document.getElementById('bat-graph');
+      if (graph && reduced && graph.pauseAnimations) graph.pauseAnimations();
+
+      // LinkInsertion.ai: step through the pipeline, then hold and restart
+      var pipe = document.getElementById('li-pipeline');
+      if (pipe) {
+        var steps = pipe.querySelectorAll('.li-step');
+        var renderPipe = function (s) {
+          for (var i = 0; i < steps.length; i++) {
+            var badge = steps[i].querySelector('.li-badge');
+            steps[i].classList.toggle('done', i < s);
+            steps[i].classList.toggle('active', i === s);
+            badge.textContent = i < s ? badge.getAttribute('data-done') : i === s ? badge.getAttribute('data-active') : '';
+          }
+        };
+        if (reduced) {
+          renderPipe(steps.length);
+        } else {
+          var s = 0;
+          renderPipe(s);
+          setInterval(function () {
+            s = s > steps.length ? 0 : s + 1;
+            renderPipe(s);
+          }, 1300);
+        }
+      }
+
+      // SyncMyTime: live local times, working-hour strips on a shared UTC axis, live weather
+      var rows = document.getElementById('smt-rows');
+      if (rows) {
+        var cities = [
+          { name: 'Stuttgart', tz: 'Europe/Berlin',       lat: 48.78, lon: 9.18 },
+          { name: 'Karachi',   tz: 'Asia/Karachi',        lat: 24.86, lon: 67.01 },
+          { name: 'Seattle',   tz: 'America/Los_Angeles', lat: 47.61, lon: -122.33 }
+        ];
+
+        var hourIn = function (tz, date) {
+          return Number(new Intl.DateTimeFormat('en-GB', { hour: 'numeric', hourCycle: 'h23', timeZone: tz }).format(date)) % 24;
+        };
+
+        cities.forEach(function (c) {
+          var row = document.createElement('div');
+          row.className = 'smt-row';
+          row.innerHTML = '<div><div class="smt-city">' + c.name + '</div><div><span class="smt-time"></span><span class="smt-wx"></span></div></div>' +
+                          '<div class="smt-strip">' + new Array(25).join('<span></span>') + '<i class="smt-now"></i></div>';
+          rows.appendChild(row);
+          c.time  = row.querySelector('.smt-time');
+          c.wx    = row.querySelector('.smt-wx');
+          c.cells = row.querySelectorAll('.smt-strip span');
+          c.now   = row.querySelector('.smt-now');
+          c.fmt   = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZone: c.tz });
+        });
+
+        var lastHour = -1;
+        var tick = function () {
+          var now = new Date();
+          var pct = (now.getUTCHours() + now.getUTCMinutes() / 60) / 24 * 100;
+          var paintStrips = now.getUTCHours() !== lastHour;
+          lastHour = now.getUTCHours();
+          cities.forEach(function (c) {
+            var hm = c.fmt.format(now).split(':');
+            c.time.innerHTML = hm[0] + '<span class="colon">:</span>' + hm[1];
+            c.now.style.left = pct + '%';
+            if (!c.wxLoaded) {
+              var lh = hourIn(c.tz, now);
+              c.wx.textContent = lh >= 6 && lh < 19 ? '☀️' : '🌙';
+            }
+            if (paintStrips) {
+              for (var h = 0; h < 24; h++) {
+                var local = hourIn(c.tz, new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), h, 30)));
+                c.cells[h].className = local >= 9 && local < 17 ? 'work' : local >= 7 && local < 21 ? 'day' : '';
+              }
+            }
+          });
+        };
+        tick();
+        setInterval(tick, 1000);
+
+        // Fetch current weather (Open-Meteo, no key) once the card scrolls into view
+        var wxIcon = function (code, isDay) {
+          if (code === 0) return isDay ? '☀️' : '🌙';
+          if (code <= 2) return isDay ? '🌤️' : '☁️';
+          if (code === 3) return '☁️';
+          if (code <= 48) return '🌫️';
+          if (code <= 67 || (code >= 80 && code <= 82)) return '🌧️';
+          if (code <= 77 || code === 85 || code === 86) return '🌨️';
+          return '⛈️';
+        };
+        var loadWeather = function () {
+          var url = 'https://api.open-meteo.com/v1/forecast?current=temperature_2m,weather_code,is_day' +
+                    '&latitude=' + cities.map(function (c) { return c.lat; }).join(',') +
+                    '&longitude=' + cities.map(function (c) { return c.lon; }).join(',');
+          fetch(url).then(function (r) { return r.ok ? r.json() : Promise.reject(); }).then(function (data) {
+            [].concat(data).forEach(function (d, i) {
+              if (!d || !d.current || !cities[i]) return;
+              cities[i].wxLoaded = true;
+              cities[i].wx.textContent = wxIcon(d.current.weather_code, d.current.is_day) + ' ' + Math.round(d.current.temperature_2m) + '°';
+            });
+          }).catch(function () { /* keep the day/night fallback */ });
+        };
+        if ('IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting) { io.disconnect(); loadWeather(); }
+          });
+          io.observe(rows);
+        } else {
+          loadWeather();
+        }
+      }
     })();
   </script>
 </body>
