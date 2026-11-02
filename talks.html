@@ -71,41 +71,175 @@
       .talk-row:last-child { border-bottom: none; }
 
       .talk-media { flex: 0 0 360px; }
-      .talk-media iframe { display: block; border-radius: 8px; }
-      .talk-media img { width: 360px; border-radius: 8px; object-fit: cover; }
+      .talk-media > img { width: 360px; border-radius: 8px; object-fit: cover; }
 
       .talk-info { flex: 1; }
       .talk-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
       .talk-venue { font-size: 13px; color: #6b7280; font-style: italic; margin-bottom: 6px; }
       .talk-desc { font-size: 14px; color: #374151; line-height: 1.6; }
 
-      /* Video grid */
-      .video-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+      /* YouTube channel header */
+      .yt-channel {
+        display: flex;
+        align-items: center;
         gap: 16px;
-        margin-bottom: 48px;
+        padding: 18px 20px;
+        margin-bottom: 18px;
+        border: 1px solid #fee2e2;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #fff 0%, #fff5f5 100%);
       }
 
-      .video-container {
+      .yt-avatar { flex: 0 0 64px; width: 64px; height: 64px; border-radius: 50%; }
+      .yt-channel-info { flex: 1; min-width: 0; }
+      .yt-channel-name { font-size: 17px; font-weight: 700; line-height: 1.3; }
+      .yt-channel-meta { font-size: 13px; color: #6b7280; }
+      .yt-channel-about { margin-top: 4px; font-size: 14px; color: #374151; line-height: 1.5; }
+
+      .yt-subscribe {
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 18px;
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        background: #ff0000;
+        transition: background 0.15s;
+      }
+
+      .yt-subscribe:hover { color: #fff; background: #cc0000; text-decoration: none; }
+
+      /* Topic filters */
+      .yt-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+
+      .yt-chip {
+        padding: 7px 14px;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 600;
+        color: #374151;
+        background: #f3f4f6;
+        border: 0;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: background 0.15s, color 0.15s;
+      }
+
+      .yt-chip span { margin-left: 6px; font-weight: 500; color: #9ca3af; }
+      .yt-chip:hover { background: #e5e7eb; }
+      .yt-chip[aria-pressed="true"] { color: #fff; background: #111827; }
+      .yt-chip[aria-pressed="true"] span { color: #9ca3af; }
+
+      /* Video cards */
+      .yt-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px 18px;
+        margin-bottom: 56px;
+      }
+
+      .yt-card[hidden] { display: none; }
+
+      .yt-thumb {
         position: relative;
-        padding-bottom: 56.25%;
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        padding: 0;
         overflow: hidden;
-        border-radius: 8px;
+        border: 0;
+        border-radius: 10px;
+        background: #0f0f0f;
+        cursor: pointer;
       }
 
-      .video-embed {
+      .yt-thumb img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+      }
+
+      .yt-thumb:hover img { transform: scale(1.04); }
+
+      .yt-thumb::before {
+        content: "";
         position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
+        inset: 0;
+        border-radius: inherit;
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+        pointer-events: none;
+      }
+
+      .yt-play {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 52px;
+        height: 36px;
+        margin: -18px 0 0 -26px;
+        border-radius: 10px;
+        background: rgba(15,15,15,0.8);
+        transition: background 0.2s;
+      }
+
+      .yt-play::after {
+        content: "";
+        position: absolute;
+        left: 21px;
+        top: 11px;
+        border-style: solid;
+        border-width: 7px 0 7px 12px;
+        border-color: transparent transparent transparent #fff;
+      }
+
+      .yt-thumb:hover .yt-play,
+      .yt-thumb:focus-visible .yt-play { background: #ff0000; }
+
+      .yt-views,
+      .yt-badge {
+        position: absolute;
+        padding: 1px 6px;
+        border-radius: 4px;
+        font-size: 11.5px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .yt-views { right: 6px; bottom: 6px; background: rgba(0,0,0,0.8); }
+      .yt-badge { left: 6px; top: 6px; background: #ff0000; }
+
+      .yt-frame {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border: 0;
+        border-radius: 10px;
+        background: #000;
+      }
+
+      .yt-meta { padding-top: 10px; }
+      .yt-topic { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+      .t-leetcode { color: #b45309; }
+      .t-c        { color: #1d4ed8; }
+      .t-ai       { color: #7c3aed; }
+      .yt-title { margin-top: 2px; font-size: 14.5px; font-weight: 600; line-height: 1.4; }
+      .yt-title a { color: #111827; }
+      .yt-title a:hover { color: #2563eb; text-decoration: none; }
+
+      @media (max-width: 760px) {
+        .yt-grid { grid-template-columns: repeat(2, 1fr); }
       }
 
       @media (max-width: 700px) {
         .talk-row { flex-direction: column; }
         .talk-media { flex: none; width: 100%; }
-        .talk-media iframe { width: 100%; height: auto; aspect-ratio: 2 / 1; }
-        .talk-media img { width: 100%; }
-        .video-grid { grid-template-columns: repeat(2, 1fr); }
+        .talk-media > img { width: 100%; }
       }
 
       @media (max-width: 640px) {
@@ -121,8 +255,22 @@
         .talk-row { gap: 14px; }
       }
 
-      @media (max-width: 420px) {
-        .video-grid { grid-template-columns: 1fr; }
+      /* Phones: channel button full width, videos as a compact list */
+      @media (max-width: 480px) {
+        .yt-channel { flex-wrap: wrap; padding: 16px; }
+        .yt-avatar { flex-basis: 56px; width: 56px; height: 56px; }
+        .yt-subscribe { width: 100%; }
+        .yt-filters { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -16px 18px; padding: 0 16px; }
+        .yt-filters::-webkit-scrollbar { display: none; }
+        .yt-chip { flex-shrink: 0; }
+        .yt-grid { grid-template-columns: 1fr; gap: 14px; }
+        .yt-card { display: grid; grid-template-columns: 44% 1fr; gap: 12px; align-items: start; }
+        .yt-card.playing { grid-template-columns: 1fr; }
+        .yt-meta { padding-top: 0; }
+        .yt-title { font-size: 14px; }
+        .yt-play { width: 40px; height: 28px; margin: -14px 0 0 -20px; border-radius: 8px; }
+        .yt-play::after { left: 16px; top: 8px; border-width: 6px 0 6px 10px; }
+        .yt-badge { font-size: 10.5px; }
       }
 
       @media (max-width: 359px) {
@@ -153,7 +301,7 @@
 
       <div class="talk-row">
         <div class="talk-media">
-          <iframe width="360" height="180" src="https://www.youtube.com/embed/aoq2FDim8Ew?si=DLRdM-lZJDGBNaWz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <button class="yt-thumb" type="button" data-id="aoq2FDim8Ew" aria-label="Play: Build Actions with Dialogflow"><img src="https://i.ytimg.com/vi/aoq2FDim8Ew/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play"></span></button>
         </div>
         <div class="talk-info">
           <div class="talk-title">Build Actions with Dialogflow</div>
@@ -164,7 +312,7 @@
 
       <div class="talk-row">
         <div class="talk-media">
-          <iframe width="360" height="180" src="https://www.youtube.com/embed/I2qgBZbiFDs?si=6dbPklgz9k2NGlXF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <button class="yt-thumb" type="button" data-id="I2qgBZbiFDs" aria-label="Play: Speech Recognition with Python"><img src="https://i.ytimg.com/vi/I2qgBZbiFDs/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play"></span></button>
         </div>
         <div class="talk-info">
           <div class="talk-title">Speech Recognition with Python</div>
@@ -186,45 +334,144 @@
 
       <h2>YouTube Channel</h2>
 
-      <div class="video-grid">
-        <div class="video-container">
-          <iframe class="video-embed" src="https://www.youtube.com/embed/7pMasRv79tg?si=PSeqzrSJygpHwGPG" frameborder="0" allowfullscreen></iframe>
+      <div class="yt-channel">
+        <img class="yt-avatar" src="images/youtube_avatar.jpg" alt="Muhammad Naufil YouTube channel">
+        <div class="yt-channel-info">
+          <div class="yt-channel-name">Muhammad Naufil</div>
+          <div class="yt-channel-meta">@muhammadnaufil5237 · 2.18K subscribers</div>
+          <div class="yt-channel-about">Coding tutorials: LeetCode problems in Python and C programming for beginners.</div>
         </div>
-        <div class="video-container">
-          <iframe class="video-embed" src="https://www.youtube.com/embed/v0RBI1fVRrM?si=atxgcw0a1YbAYD8t" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-          <iframe class="video-embed" src="https://www.youtube.com/embed/GyDG7uLdl04?si=jNwhttrp1qevGK_H" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-          <iframe class="video-embed" src="https://www.youtube.com/embed/fuFvNptn9bI?si=wn5qcJgigF3qLhGs" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-          <iframe class="video-embed" src="https://www.youtube.com/embed/01-_p3vzD0A?si=_fLIddifmwQxBix_" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-          <iframe class="video-embed" src="https://www.youtube.com/embed/T6RBt5lw_ps?si=WV2F3Ijz4DPUd4v8" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-          <iframe class="video-embed" src="https://www.youtube.com/embed/1Lxia2Cu_Gg?si=jBd5VxB9111aPQ-Q" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-          <iframe class="video-embed" src="https://www.youtube.com/embed/de3dHMYd8FY?si=z90cc2lHmotTMWEE" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-          <iframe class="video-embed" src="https://www.youtube.com/embed/ewxCQfNwXAY?si=nfp2pHrmrUk7VqC4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-          <iframe class="video-embed" src="https://www.youtube.com/embed/S7jHdoSu8TA?si=x-oaScCMGanl3tq1" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-          <iframe class="video-embed" src="https://www.youtube.com/embed/MUrsdzfRgpg?si=PqX_HQru6O4-xQt4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-container">
-          <iframe class="video-embed" src="https://www.youtube.com/embed/AlYdudYx6rw?si=oEngIl-h7pGAYSD9" frameborder="0" allowfullscreen></iframe>
-        </div>
+        <a class="yt-subscribe" href="https://www.youtube.com/@muhammadnaufil5237?sub_confirmation=1">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+          Subscribe
+        </a>
       </div>
 
+      <div class="yt-filters" role="group" aria-label="Filter videos by topic">
+        <button class="yt-chip" type="button" data-topic="all" aria-pressed="true">All<span>12</span></button>
+        <button class="yt-chip" type="button" data-topic="leetcode" aria-pressed="false">LeetCode<span>5</span></button>
+        <button class="yt-chip" type="button" data-topic="c" aria-pressed="false">C Programming<span>6</span></button>
+        <button class="yt-chip" type="button" data-topic="ai" aria-pressed="false">AI<span>1</span></button>
+      </div>
+
+      <div class="yt-grid">
+        <article class="yt-card" data-topic="c">
+          <button class="yt-thumb" type="button" data-id="ewxCQfNwXAY" aria-label="Play: Fibonacci Sequence Using Arrays"><img src="https://i.ytimg.com/vi/ewxCQfNwXAY/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play"></span><span class="yt-badge">Most watched</span><span class="yt-views">17K views</span></button>
+          <div class="yt-meta">
+            <span class="yt-topic t-c">C Programming</span>
+            <h3 class="yt-title"><a href="https://www.youtube.com/watch?v=ewxCQfNwXAY">Fibonacci Sequence Using Arrays</a></h3>
+          </div>
+        </article>
+        <article class="yt-card" data-topic="leetcode">
+          <button class="yt-thumb" type="button" data-id="7pMasRv79tg" aria-label="Play: Car Fleet (LeetCode 853)"><img src="https://i.ytimg.com/vi/7pMasRv79tg/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play"></span><span class="yt-views">6.3K views</span></button>
+          <div class="yt-meta">
+            <span class="yt-topic t-leetcode">LeetCode · Python</span>
+            <h3 class="yt-title"><a href="https://www.youtube.com/watch?v=7pMasRv79tg">Car Fleet (LeetCode 853)</a></h3>
+          </div>
+        </article>
+        <article class="yt-card" data-topic="c">
+          <button class="yt-thumb" type="button" data-id="de3dHMYd8FY" aria-label="Play: Intro to Pointers"><img src="https://i.ytimg.com/vi/de3dHMYd8FY/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play"></span><span class="yt-views">527 views</span></button>
+          <div class="yt-meta">
+            <span class="yt-topic t-c">C Programming</span>
+            <h3 class="yt-title"><a href="https://www.youtube.com/watch?v=de3dHMYd8FY">Intro to Pointers</a></h3>
+          </div>
+        </article>
+        <article class="yt-card" data-topic="leetcode">
+          <button class="yt-thumb" type="button" data-id="fuFvNptn9bI" aria-label="Play: Remove Duplicates from Sorted Array (LeetCode 26)"><img src="https://i.ytimg.com/vi/fuFvNptn9bI/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play"></span><span class="yt-views">451 views</span></button>
+          <div class="yt-meta">
+            <span class="yt-topic t-leetcode">LeetCode · Python</span>
+            <h3 class="yt-title"><a href="https://www.youtube.com/watch?v=fuFvNptn9bI">Remove Duplicates from Sorted Array (LeetCode 26)</a></h3>
+          </div>
+        </article>
+        <article class="yt-card" data-topic="leetcode">
+          <button class="yt-thumb" type="button" data-id="GyDG7uLdl04" aria-label="Play: Lowest Common Ancestor of a Binary Search Tree"><img src="https://i.ytimg.com/vi/GyDG7uLdl04/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play"></span><span class="yt-views">422 views</span></button>
+          <div class="yt-meta">
+            <span class="yt-topic t-leetcode">LeetCode · Python</span>
+            <h3 class="yt-title"><a href="https://www.youtube.com/watch?v=GyDG7uLdl04">Lowest Common Ancestor of a Binary Search Tree</a></h3>
+          </div>
+        </article>
+        <article class="yt-card" data-topic="leetcode">
+          <button class="yt-thumb" type="button" data-id="T6RBt5lw_ps" aria-label="Play: Two Sum II: Input Array Is Sorted"><img src="https://i.ytimg.com/vi/T6RBt5lw_ps/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play"></span><span class="yt-views">396 views</span></button>
+          <div class="yt-meta">
+            <span class="yt-topic t-leetcode">LeetCode · Python</span>
+            <h3 class="yt-title"><a href="https://www.youtube.com/watch?v=T6RBt5lw_ps">Two Sum II: Input Array Is Sorted</a></h3>
+          </div>
+        </article>
+        <article class="yt-card" data-topic="leetcode">
+          <button class="yt-thumb" type="button" data-id="01-_p3vzD0A" aria-label="Play: Two Sum"><img src="https://i.ytimg.com/vi/01-_p3vzD0A/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play"></span><span class="yt-views">310 views</span></button>
+          <div class="yt-meta">
+            <span class="yt-topic t-leetcode">LeetCode · Python</span>
+            <h3 class="yt-title"><a href="https://www.youtube.com/watch?v=01-_p3vzD0A">Two Sum</a></h3>
+          </div>
+        </article>
+        <article class="yt-card" data-topic="ai">
+          <button class="yt-thumb" type="button" data-id="v0RBI1fVRrM" aria-label="Play: DALL-E featuring Harry Potter, Spider-Man and Batman"><img src="https://i.ytimg.com/vi/v0RBI1fVRrM/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play"></span><span class="yt-views">268 views</span></button>
+          <div class="yt-meta">
+            <span class="yt-topic t-ai">AI</span>
+            <h3 class="yt-title"><a href="https://www.youtube.com/watch?v=v0RBI1fVRrM">DALL-E featuring Harry Potter, Spider-Man and Batman</a></h3>
+          </div>
+        </article>
+        <article class="yt-card" data-topic="c">
+          <button class="yt-thumb" type="button" data-id="S7jHdoSu8TA" aria-label="Play: Intro to Arrays"><img src="https://i.ytimg.com/vi/S7jHdoSu8TA/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play"></span><span class="yt-views">237 views</span></button>
+          <div class="yt-meta">
+            <span class="yt-topic t-c">C Programming</span>
+            <h3 class="yt-title"><a href="https://www.youtube.com/watch?v=S7jHdoSu8TA">Intro to Arrays</a></h3>
+          </div>
+        </article>
+        <article class="yt-card" data-topic="c">
+          <button class="yt-thumb" type="button" data-id="1Lxia2Cu_Gg" aria-label="Play: Pointers with Functions"><img src="https://i.ytimg.com/vi/1Lxia2Cu_Gg/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play"></span><span class="yt-views">190 views</span></button>
+          <div class="yt-meta">
+            <span class="yt-topic t-c">C Programming</span>
+            <h3 class="yt-title"><a href="https://www.youtube.com/watch?v=1Lxia2Cu_Gg">Pointers with Functions</a></h3>
+          </div>
+        </article>
+        <article class="yt-card" data-topic="c">
+          <button class="yt-thumb" type="button" data-id="AlYdudYx6rw" aria-label="Play: Beginner&#39;s Arrays in C, Part 1"><img src="https://i.ytimg.com/vi/AlYdudYx6rw/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play"></span><span class="yt-views">168 views</span></button>
+          <div class="yt-meta">
+            <span class="yt-topic t-c">C Programming</span>
+            <h3 class="yt-title"><a href="https://www.youtube.com/watch?v=AlYdudYx6rw">Beginner's Arrays in C, Part 1</a></h3>
+          </div>
+        </article>
+        <article class="yt-card" data-topic="c">
+          <button class="yt-thumb" type="button" data-id="MUrsdzfRgpg" aria-label="Play: Find the Largest Number Using C Arrays"><img src="https://i.ytimg.com/vi/MUrsdzfRgpg/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play"></span><span class="yt-views">89 views</span></button>
+          <div class="yt-meta">
+            <span class="yt-topic t-c">C Programming</span>
+            <h3 class="yt-title"><a href="https://www.youtube.com/watch?v=MUrsdzfRgpg">Find the Largest Number Using C Arrays</a></h3>
+          </div>
+        </article>
+      </div>
+
+
     </div>
+
+    <script>
+      // Load the YouTube player only when a thumbnail is clicked
+      document.querySelectorAll('.yt-thumb').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var frame = document.createElement('iframe');
+          frame.className = 'yt-frame';
+          frame.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.id + '?autoplay=1&rel=0';
+          frame.title = btn.getAttribute('aria-label');
+          frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+          frame.referrerPolicy = 'strict-origin-when-cross-origin';
+          frame.allowFullscreen = true;
+          var card = btn.closest('.yt-card');
+          if (card) card.classList.add('playing');
+          btn.replaceWith(frame);
+        });
+      });
+
+      // Topic filter chips
+      var chips = document.querySelectorAll('.yt-chip');
+      chips.forEach(function (chip) {
+        chip.addEventListener('click', function () {
+          var topic = chip.dataset.topic;
+          chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+          document.querySelectorAll('.yt-card').forEach(function (card) {
+            card.hidden = topic !== 'all' && card.dataset.topic !== topic;
+          });
+        });
+      });
+    </script>
   </body>
 </html>
